@@ -1,0 +1,27 @@
+{
+  "name": "vr-explorer-docs",
+  "version": "1.0.0",
+  "description": "vr-explorer 第三方api对接文档",
+  "main": "index.js",
+  "scripts": {
+    "start": "yuque-hexo clean && yuque-hexo sync"
+  },
+  "author": "yangsheng",
+  "license": "ISC",
+  "devDependencies": {
+    "yuque-hexo": "^1.7.0"
+  },
+  "yuqueConfig": {
+    "postPath": "docs",
+    "cachePath": "yuque.json",
+    "mdNameFormat": "title",
+    "adapter": "markdown",
+    "concurrency": 5,
+    "baseUrl": "https://visbodydev.yuque.com/api/v2",
+    "login": "staff_global",
+    "repo": "ngpgd5",
+    "onlyPublished": true,
+    "onlyPublic": false,
+    "token": "D9jPS2SAwsto4PBUpLDxdfGd8QnRpNXvSijGKYHZ"
+  }
+}
