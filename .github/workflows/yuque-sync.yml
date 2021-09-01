@@ -42,6 +42,6 @@ jobs:
       with:
           deploy_key: ${{ secrets.SSH_PRIVATE_KEY }}
           publish_branch: master
-          publish_dir: ./
-          keep_files: true
+          publish_dir: ./docs
+          destination_dir: ./docs
           commit_message: ${{ github.event.head_commit.message }}
