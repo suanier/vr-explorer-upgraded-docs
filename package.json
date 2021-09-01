@@ -21,7 +21,6 @@
     "login": "staff_global",
     "repo": "ngpgd5",
     "onlyPublished": true,
-    "onlyPublic": false,
-    "token": "D9jPS2SAwsto4PBUpLDxdfGd8QnRpNXvSijGKYHZ"
+    "onlyPublic": false
   }
 }
