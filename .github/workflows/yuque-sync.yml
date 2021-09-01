@@ -32,10 +32,8 @@ jobs:
         YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
       run: |
         npm install yuque-hexo -g
-        npm install
         npm run start
 
-    #     
     # from https://github.com/peaceiris/actions-gh-pages    
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -44,4 +42,4 @@ jobs:
           publish_branch: master
           publish_dir: ./docs
           destination_dir: ./docs
-          commit_message: ${{ github.event.head_commit.message }}
+          # commit_message: ${{ github.event.head_commit.message }}
