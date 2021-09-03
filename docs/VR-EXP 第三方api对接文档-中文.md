@@ -173,7 +173,7 @@ Content-Type: application/json
 | token      | string | 接口凭证                         |
 | expires_in | int    | 凭证有效时间 单位秒              |
 
-#### 3.1.2 第三方获取二维码接口
+#### 3.1.2 第三方获取二维码接口 :id=get-grcode
 
 **接口描述：**
 
@@ -224,7 +224,7 @@ Content-Type: application/json
 | error_msg | string | 错误信息                          |
 | url       | string | 二维码地址                        |
 
-#### 3.1.3 维塑推送合成通知消息
+#### 3.1.3 维塑推送合成通知消息 :id=notify
 
 **接口描述：**
 
@@ -322,7 +322,7 @@ Content-Type: application/json
 | 0      | 请求成功     |
 | 30001  | 无效的 token |
 
-### 3.2 获取维塑接口凭证
+### 3.2 获取维塑接口凭证 :id=get-token
 
 ####请求头携带参数
 
