@@ -249,7 +249,7 @@ Content-Type: application/json
 | user_info            | 否   | object | 用户信息                                 |
 | age                  | 否   | int    | 年龄                                     |
 | birthday             | 否   | string | 生日                                     |
-| phone                | 否   | string | 手机                                     |
+| mobile               | 否   | string | 手机号                                   |
 | sex                  | 否   | string | f 女，m 　男                             |
 | height               | 否   | int    | 身高                                     |
 | action_status        | 是   | object | 状态信息                                 |
@@ -421,7 +421,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | scan_id   | 是   | string | 扫描 ID                                           |
 | device_id | 是   | string | 设备 ID                                           |
 | third_uid | 是   | string | 第三方用户唯一 Id 字母和数字 长度 8 ~ 40          |
-| mobile    | 是   | string | 手机号                                            |
+| email     | 是   | string | 邮箱                                              |
 | sex       | 是   | int    | 性别 1 男 2 女                                    |
 | height    | 是   | int    | 身高  110 ~ 205 单位 cm                           |
 | birthday  | 是   | string | 生日 格式 yyyy-MM-dd 注意周岁范围需在 5 ~ 70 之间 |
