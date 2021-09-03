@@ -33,6 +33,7 @@ jobs:
       run: |
         npm install yuque-hexo -g
         npm run start
+        find docs/* ! -name "VR-EXP*.md" -type f -print -exec rm -rf {} \;
 
     # from https://github.com/peaceiris/actions-gh-pages    
     - name: Deploy
@@ -42,5 +43,4 @@ jobs:
           publish_branch: master
           publish_dir: ./docs
           destination_dir: ./docs
-          exclude_assets: '!(VR-EX*)'
           # commit_message: ${{ github.event.head_commit.message }}
