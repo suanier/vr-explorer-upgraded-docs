@@ -1,9 +1,9 @@
 ## Revision records
 
-| Date       | Revised version | Revision description | Author     |
-| ---------- | --------------- | -------------------- | ---------- |
-| 2021/08/18 | V 1.0           | New creation         | Fan Yunbo  |
-| 2021/08/25 | V 1.0           | Migrate to Yuque     | Yang Sheng |
+| Date       | Revised version | Revision description | Author    |
+| ---------- | --------------- | -------------------- | --------- |
+| 2021/08/18 | V 1.0           | New creation         | Fan Yunbo |
+| 2021/08/25 | V 1.0           | Migrate to Yuque     | Fan Yunbo |
 
 **Contents**
 
