@@ -1,39 +1,43 @@
-**修正記録**
+## 修正記録
 
 | 日付                | 修正バージョン | 修正詳細                         | 作成者 |
 | ------------------- | -------------- | -------------------------------- | ------ |
 | 2021 年 08 月 18 日 | V 1.0          | 新規作成                         | 範雲波 |
-| 2021 年 08 月 25 日 | V 1.0          | 語雀（Yuque)ワークスペースに移行 | 楊昇   |
+| 2021 年 09 月 13 日 | V 1.0          | 語雀（Yuque)ワークスペースに移行 | 範雲波 |
 
-**目次**
+## 目次
 
-1. API ポート概要およびテストデータ
+```
+1. APIポート概要およびテストデータ
 2. ポート命名規則
 3. ポート説明
-   3.1 第三者サービスプロバイダー接続説明
-   3.1.1 第三者ポート認証取得
-   3.1.2 第三者の QR コード取得ポート
-   3.1.3 Visbody プッシュメッセージ統合通知メッセージ
-   3.1.4 第三者状態ステータスコード
-   3.2 Visbody ポート認証の取得
-   3.2.1 Visbody ポート認証の取得
-   3.2.2 ユーザー情報の関連付け
-   3.3 身体測定ファイルおよびデータの取得
-   3.3.1 体組成データの取得
-   3.3.2 ユーザー脂肪率ランクの取得
-   3.3.3 身体評価点数の取得
-   3.3.4 体組成調節データの取得
-   3.4 姿勢ファイルおよびデータの取得
-   3.4.1 姿勢ファイルの取得
-   3.4.2 姿勢データの取得
-   3.4.3 各部位ごとの周囲長ファイルの取得
-   3.4.4 各部位ごとの周囲長データの取得
-   3.5 肩部測定データの取得
-   3.6 プリントレポートの取得
-   3.7 Visbody リターンステータスコードの説明
-   3.8 プッシュメッセージタイプとポート関連の説明
-   **1. ファイル紹介**
-   **1.1 API ポート概要**
+	3.1 第三者サービスプロバイダー接続説明
+		3.1.1 第三者ポート認証取得
+		3.1.2 第三者のQRコード取得ポート
+		3.1.3 Visbody プッシュメッセージ統合通知メッセージ
+		3.1.4 第三者状態ステータスコード
+	3.2 Visbodyポート認証の取得
+		3.2.1 Visbodyポート認証の取得
+		3.2.2 ユーザー情報の関連付け
+	3.3 身体測定ファイルおよびデータの取得
+		3.3.1 体組成データの取得
+		3.3.2 ユーザー脂肪率ランクの取得
+		3.3.3 身体評価点数の取得
+		3.3.4 体組成調節データの取得
+	3.4 姿勢ファイルおよびデータの取得
+		3.4.1 姿勢ファイルの取得
+		3.4.2 姿勢データの取得
+		3.4.3 各部位ごとの周囲長ファイルの取得
+		3.4.4 各部位ごとの周囲長データの取得
+	3.5 肩部測定データの取得
+	3.6 プリントレポートの取得
+	3.7 Visbodyリターンステータスコードの説明
+	3.8 プッシュメッセージタイプとポート関連の説明
+```
+
+## 1. ファイル紹介
+
+### 1.1 API ポート概要
 
 | ポート                                       | ポート機能                                                                                                                                                                                                                                                                  |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,10 +58,12 @@
 | secret       | D3zgtDndlqcs3ygJLHVeeP03DuC9lbZR                    |
 | scanid       | 20041910080001-e3c39e63-9e8f-11ea-91e6-00d861a9ecd9 |
 
-**2. ポート規則**
-**2.1 命名規則**
+## 2. ポート規則
+
+### 2.1 命名規則
+
 https://[ドメイン名]/[バージョン]/[ポート名]
-例：[http://api.vr-explorer.visbody.com/v1/token]()
+例：http://api.vr-explorer.visbody.com/v1/token
 
 | 実例：                      | 説明       |
 | --------------------------- | ---------- |
@@ -65,39 +71,54 @@ https://[ドメイン名]/[バージョン]/[ポート名]
 | v1                          | バージョン |
 | token                       | ポート名   |
 
-**2.2 バージョンコントロール**
+### 2.2 バージョンコントロール
+
 ポートバージョンはパスを通じて管理
+
+```
 HTTP GET:
-// v1 バージョン
-[http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
-// v2 バージョン
-[http://api.vr-explorer.visbody.com/v2/token](http://api.vr-explorer.visbody.com/v2/token)
-**2.3 POST 提出方法**
+// v1バージョン
+http://api.vr-explorer.visbody.com/v1/token
+// v2バージョン
+http://api.vr-explorer.visbody.com/v2/token
+```
+
+### 2.3 POST 提出方法
+
+```
 Content-Type: application/json
-**3. ポート説明**
-**3.1 第三者サービスプロバイダー接続説明**
+```
+
+## 3. ポート説明
+
+### 3.1 第三者サービスプロバイダー接続説明
+
 現在 API 接続/QR コード接続の 2 種類の方法をサポートします。
-**１. API 接続**
+
+#### １. API 接続
+
 取扱説明:\*\* **
 Visbody が提供する API 接続を通じてユーザーの測定データを取得を可能にします。
 接続成功後 Visbody は客先が割り当てる 3.1.3 ポート ∂ を介して読み取り ID などの関連情報をプッシュし、客先は測定項目結果に基づき対応するポートにアクセスしデータを取得します。統合プッシュタイプおよびポートの関係は 3.8 の説明を参照ください。
-![](https://cdn.nlark.com/yuque/0/2021/png/21651137/1631511496687-f81ae66a-56d3-4005-86a0-379132ff1b24.png#)
+![](https://cdn.nlark.com/yuque/0/2021/png/21651137/1631511496687-f81ae66a-56d3-4005-86a0-379132ff1b24.png#id=pytjy&originHeight=720&originWidth=971&originalType=binary&ratio=1&status=done&style=none)
 **接続説明：\*\*
 
 - API 接続権限のリクエスト
 - Visbody 管理プラットフォームを介する API の接続設定は 3.1.1/3.1.3 ポートを割当
 
-**2. QR コード接続**
+#### 2. QR コード接続
+
 **取扱説明: **
 デバイス初期設定のシリアル番号を変換し、コードを読み取った後客先自身の APP もしくはミニアプリなどその他プラットフォームにジャンプします。
-![](https://cdn.nlark.com/yuque/0/2021/png/21651137/1631511497197-21ae870a-f392-4e91-a287-414d95592d7d.png#)
+![](https://cdn.nlark.com/yuque/0/2021/png/21651137/1631511497197-21ae870a-f392-4e91-a287-414d95592d7d.png#id=jxN9s&originHeight=725&originWidth=981&originalType=binary&ratio=1&status=done&style=none)
 **接続説明：**
 
 - API 接続権限のリクエスト
 - Visbody 管理プラットフォームを介する API の接続設定は 3.1.1/3.1.2/3.1.3 ポートを割当
 - ユーザーの QR コードを読み取った後、Visbody3.2.2 ポートがユーザー情報の紐付けおよび統合をリクエストします。
 
-**3.1.1 第三者ポート認証取得**
+#### 3.1.1 第三者ポート認証取得 :id=third-token
+
 **ポート説明：**
 客先から取得でき、3.1.2、3.1.3 などポート認証情報アドレスなどで第三者サービスプロバイダーのポートとアクセス可能にします。
 **リクエスト URL フォーマット要件：**
@@ -117,18 +138,26 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 | secret       | YES      | string | ユーザー独自の認証暗号化キーで、第三者サービスプロバイダーから提供 |
 
 **正常時のリターン例**
-{
-"code": 0,
-"data": {
-"token": "TOKEN",
-"expires_in": 7200
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+      "token": "TOKEN",
+      "expires_in": 7200
+    }
+  }
+```
+
 **エラー時のリターン例**
-{
-"code": 30001,
-"error_msg": 'ERROR_MSG'
-}
+
+```
+  {
+    "code": 30001,
+    "error_msg": 'ERROR_MSG'
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型   | 説明                                                                            |
@@ -138,7 +167,8 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 | token        | string | ポート認証                                                                      |
 | expires_in   | int    | 認証有効時間（単位：秒）                                                        |
 
-**3.1.2 第三者の QR コード取得ポート**
+#### 3.1.2 第三者の QR コード取得ポート :id=get-grcode
+
 **ポート説明：**
 ユーザー側がデバイスにて測定完了後の結果 QR コードで、第三者サービスプロバイダーから提供されます。
 **リクエスト URL フォーマット要件：**
@@ -159,17 +189,25 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 | token        | YES      | string | 第三者サービスプロバイダーポート認証 |
 
 **正常時のリターン例**
-{
-"code": 0,
-"data": {
-"url": "qrCodeUrl",
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+      "url": "qrCodeUrl",
+    }
+  }
+```
+
 **エラー時のリターン例**
-{
-"code": 30001,
-"error_msg": 'ERROR_MSG'
-}
+
+```
+  {
+    "code": 30001,
+    "error_msg": 'ERROR_MSG'
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型   | 説明                                                                            |
@@ -178,7 +216,8 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 | error_msg    | string | エラー情報                                                                      |
 | url          | string | QR コードアドレス                                                               |
 
-**3.1.3 Visbody プッシュメッセージ統合通知メッセージ**
+#### 3.1.3 Visbody プッシュメッセージ統合通知メッセージ :id=notify
+
 **ポート説明：**
 ユーザーがデバイス側で QR コードを読み取った後、身体測定/姿勢/局部分布結果および読み取った関連情報で、このポートから第三者サービスプロバイダーにプッシュメッセージに転用されます。
 **リクエスト URL フォーマット要件：**
@@ -212,38 +251,50 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 | token                | YES      | string | 第三者サービスプロバイダーポート認証                                  |
 
 **フォーマットは下記の通り。**
+
+```
 {
-"user_info": {
-"age": 26,
-"birthday": "1992-12-12",
-"height": 178,
-"phone": "13812345678",
-"sex": "f"
-},
-"action_status":{
-"measure_status":0,
-"eval_status":0,
-"bia_status":0,
-"bodypredict_status":0,
-"tchar_status":0,
-"eval_dynamic_status":0
-},
-"device_id": "20041910080001",
-"scan_id": "20041910080001-a210136e-1bfb-11ea-b711-00d861a9ecd9",
-"time": "2019-12-11 17:56:15",
-"pdf_status":1,
-"token": "TOKEN"
+  "user_info": {
+    "age": 26,
+    "birthday": "1992-12-12",
+    "height": 178,
+    "phone": "13812345678",
+    "sex": "f"
+  },
+  "action_status":{
+    "measure_status":0,
+    "eval_status":0,
+    "bia_status":0,
+    "bodypredict_status":0,
+    "tchar_status":0,
+    "eval_dynamic_status":0
+  },
+  "device_id": "20041910080001",
+  "scan_id": "20041910080001-a210136e-1bfb-11ea-b711-00d861a9ecd9",
+  "time": "2019-12-11 17:56:15",
+  "pdf_status":1,
+  "token": "TOKEN"
 }
+```
+
 **正常時のリターン例**
-{
-"code": 0
-}
+
+```
+ {
+    "code": 0
+  }
+```
+
 通知リクエストを正しく受信した場合には必ず応答しなければならず、応答しない場合 Visbody サーバーから再送を 3 回行います。
 **エラー時のリターン例**
+
+```
 {
-"code": 30001,
-"error_msg": 'ERROR_MSG'
-}
+    "code": 30001,
+    "error_msg": 'ERROR_MSG'
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型   | 説明                                                                            |
@@ -251,7 +302,8 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 | code         | int    | ステータスコード、リターンされるステータスコードは 3.1.4 の説明を参照ください。 |
 | error_msg    | string | エラー情報                                                                      |
 
-**3.1.4 第三者状態ステータスコード**
+#### 3.1.4 第三者状態ステータスコード
+
 詳細：第三者サービスプロバイダーの上記のポートは下記のステータスコードによって関連するステータス情報を返すものとします。
 
 | ステータスコード | 備考           |
@@ -259,14 +311,18 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 | 0                | リクエスト成功 |
 | 30001            | 無効な token   |
 
-**3.2 Visbody ポート認証の取得** ####パラメータを含むリクエストヘッダー
+### 3.2 Visbody ポート認証の取得 :id=get-token
+
+####パラメータを含むリクエストヘッダー
 
 - リクエストヘッダー中のリターンパラメータに対応する言語と単位のレポートデータに基づき
   リクエストヘッダーの中に言語および単位を付加します。
 
 $headers[]  =  "Unit: $vfUnit; // vfUnit 転送可能なパラメータ単位はmetric(メトリック法) / imperial (ヤードポンド法）
 $headers[] = "Language: $vfLanguage; // vfLanguage 転送可能な言語は en-US(アメリカ英語) / ja-JP(日本語) / zh-CN(中国語)
-**3.2.1 Visbody ポート認証の取得**
+
+#### 3.2.1 Visbody ポート認証の取得
+
 **ポート説明：**
 
 - 取得した Visbody ポートを用いて認証を転用します。
@@ -287,18 +343,26 @@ $headers[] = "Language: $vfLanguage; // vfLanguage 転送可能な言語は en-U
 | secret       | YES      | string | 第三者サービスプロバイダーの唯一の認証暗号化キー、すなわち vfsecret |
 
 **正常時のリターン例**
-{
-"code": 0,
-"data": {
-"token": "TOKEN",
-"expires_in": 7200
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+      "token": "TOKEN",
+      "expires_in": 7200
+    }
+  }
+```
+
 **エラー時のリターン例**
-{
-"code": 40001,
-"error_msg": 'ERROR_MSG'
-}
+
+```
+ {
+    "code": 40001,
+    "error_msg": 'ERROR_MSG'
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型   | 説明                                                                          |
@@ -318,10 +382,15 @@ Token の使用方法 1.
 
 1. POST もしくは GET リクエストの中で通常のパラメータを転送
 2. リクエストヘッダーの中に Authorization Bearer Token を付加（php を例とする）
-   $headers[]  =  "Content-Type: application/json";
-$headers[] = "Authorization: Bearer ". $vfToken;
-   **3.2.2 ユーザー情報の関連付け**
-   **ポート説明：**
+
+```
+$headers[]  =  "Content-Type: application/json";
+$headers[]  =  "Authorization: Bearer ". $vfToken;
+```
+
+#### 3.2.2 ユーザー情報の関連付け
+
+**ポート説明：**
 
 - 第三者サービスプロバイダーの APP がデバイスの QR コードを読み取った後、第三者サービスプロバイダーのバックグラウンドでデバイスとユーザー身分の認証を行い、このポートの Visbody バックグラウンドサービスを転用して統合リクエストを開始します。
 
@@ -345,19 +414,28 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | height       | YES      | int    | 身長　 110 ～ 205（cm）                                                                       |
 | birthday     | YES      | string | 生年月日　フォーマットは yyyy/MM/dd であり、年齢範囲は満 5 ～ 70 歳の間になります。           |
 | token        | YES      | string | ポート認証                                                                                    |
+| name         | YES      | string | ユーザーは                                                                                    |
 
 **正常時のリターン例**
-{
-"code": 0,
-"data": {
-"result":TRUE
-}
-}
+
+```
+  {
+    "code": 0,
+    "data": {
+      "result":TRUE
+    }
+  }
+```
+
 **エラー時のリターン例**
-{
-"code": 40001,
-"error_msg": 'ERROR_MSG'
-}
+
+```
+  {
+    "code": 40001,
+    "error_msg": 'ERROR_MSG'
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型    | 説明                                                                          |
@@ -370,11 +448,17 @@ Token の使用方法 1.
 
 1. POST もしくは GET リクエストの中で通常のパラメータを転送
 2. リクエストヘッダーの中に Authorization Bearer Token を付加（php を例とする）
-   $headers[]  =  "Content-Type: application/json";
-$headers[] = "Authorization: Bearer ". $vfToken;
-   **3.3 身体測定ファイルデータの取得**
-   **3.3.1 体組成データの取得**
-   **ポート説明：**
+
+```
+$headers[]  =  "Content-Type: application/json";
+$headers[]  =  "Authorization: Bearer ". $vfToken;
+```
+
+### 3.3 身体測定ファイルデータの取得
+
+#### 3.3.1 体組成データの取得
+
+**ポート説明：**
 
 - 身体測定体組成データを取得するのに用います。
 
@@ -394,23 +478,27 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"WT": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"FFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"BFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"LM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"TBW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"BMI": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"PBF": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"BMR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"WHR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"SM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"TM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
-"PROTEIN": {"l":10,"m":15,"h":20,"v":30.3,"status":3}，
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+    	"WT": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "FFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "LM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "TBW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BMI": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "PBF": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BMR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "WHR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "SM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "TM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "PROTEIN": {"l":10,"m":15,"h":20,"v":30.3,"status":3}，
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型   | 説明                |
@@ -429,14 +517,19 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | PROTEIN      | object | タンパク質(kg)      |
 
 **体組成範囲の説明**
+
+```
 {
-"l":10, // 下限値
-"m":15, // 標準値
-"h":20, // 上限値
-"v":30.3, // 測定値
-"status":3 // 状態 1 ＝低，２＝正常，３＝高
+	"l":10,        // 下限値
+	"m":15,        // 標準値
+	"h":20,        // 上限値
+	"v":30.3,      // 測定値
+	"status":3     // 状態 1＝低，２＝正常，３＝高
 }
-**3.3.2 ユーザー脂肪率ランクの取得**
+```
+
+#### 3.3.2 ユーザー脂肪率ランクの取得
+
 **ポート説明：**
 
 - ユーザーの脂肪レベルに用います。
@@ -457,14 +550,18 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"va_grade":9,
-"body_age":18,
-"body_share":3
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+			"va_grade":9,
+			"body_age":18,
+			"body_share":3
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型 | 説明                                                                              |
@@ -473,7 +570,8 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | body_age     | int  | 身体年齢                                                                          |
 | body_share   | int  | 体型判断（1：細身体型/2：筋肉体型/3：肥満体型/4：健康体型）                       |
 
-**3.3.3 ユーザー身体評価点数の取得**
+#### 3.3.3 ユーザー身体評価点数の取得
+
 **ポート説明：**
 
 - ユーザーの身体評価点数に用いられます。
@@ -495,19 +593,24 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_type    | YES      | int    | 読み取りタイプ　 1：身体測定/2：姿勢 |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"score": 98
-}
-}
+
+```
+  {
+    "code": 0,
+    "data": {
+      "score": 98
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型 | 説明       |
 | ------------ | ---- | ---------- |
 | score        | int  | 項目評価点 |
 
-**3.3.4 身体成分調節データの取得**
+#### 3.3.4 身体成分調節データの取得
+
 **ポート説明：**
 
 - 体組成調節データを取得するのに用います。
@@ -528,17 +631,21 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"weight":1.8,
-"body_fat":-2.6,
-"muscle":-2.6,
-"gr_weight":75,
-"gr_body_fat":12.3,
-"gr_muscle":15.1,
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+      "weight":1.8,
+	  	"body_fat":-2.6,
+	  	"muscle":-2.6,
+	  	"gr_weight":75,
+	  	"gr_body_fat":12.3,
+	  	"gr_muscle":15.1,
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型   | 説明           |
@@ -550,8 +657,10 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | gr_body_fat  | double | 体脂肪黄金比率 |
 | gr_muscle    | double | 筋肉黄金比率   |
 
-**3.4 姿勢ファイルおよびデータの取得**
-**3.4.1 姿勢ファイルの取得**
+### 3.4 姿勢ファイルおよびデータの取得
+
+#### 3.4.1 姿勢ファイルの取得
+
 **ポート説明：**
 
 - 姿勢模型/キーポイント json ファイルおよび姿勢撮影画像を取得するのに用います。
@@ -572,18 +681,22 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"model_url": "MODEL_URL",
-"json_url": "JSON_URL",
-"pic_front_url": "PIC_FRONT_URL",
-"pic_left_url": "PIC_LEFT_URL",
-"pic_right_url": "PIC_RIGHT_URL",
-"pic_top_url": "PIC_TOP_URL",
-"expires_in": 7200
-}
-}
+
+```
+  {
+    "code": 0,
+    "data": {
+      "model_url": "MODEL_URL",
+	  	"json_url": "JSON_URL",
+	  	"pic_front_url": "PIC_FRONT_URL",
+	  	"pic_left_url": "PIC_LEFT_URL",
+	  	"pic_right_url": "PIC_RIGHT_URL",
+	  	"pic_top_url": "PIC_TOP_URL",
+      "expires_in": 7200
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名  | 類型   | 説明                                                                                                       |
@@ -596,7 +709,8 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | pic_top_url   | string | 姿勢上面画像ファイルパス、ファイル形式＝.jpg                                                               |
 | expires_in    | int    | ファイルパス有効時間                                                                                       |
 
-**3.4.2 姿勢データの取得**
+#### 3.4.2 姿勢データの取得
+
 **ポート説明：**
 
 - 姿勢評価身体データを取得するのに用います。
@@ -617,62 +731,66 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"high_low_shoudler": {
-"val": 15.96,
-"conclusion": "怒り肩/なで肩(左高)",
-"risk": :怒り肩/なで肩は頚椎部の慢性的な痛みを引き起こす可能性があり、多くの場合、脊柱管狭窄症、骨盤変位、下肢の長さ不揃いを伴うことがあります。"
-},
-"head_slant": {
-"val": 15.96,
-"conclusion": "正常",
-"risk": "--"
-},
-"head_forward": {
-"val": 15.96,
-"conclusion": "正常",
-"risk": "--"
-},
-"leg_xo": {
-"left_val": 184.3,
-"right_val": 187.2,
-"conclusion": "正常",
-"risk": "--"
-},
-"pelvis_forward": {
-"val": 15.96,
-"conclusion": "正常",
-"risk": "--"
-},
-"left_knee_check": {
-"val": 175.4,
-"conclusion": "正常",
-"risk": "--"
-},
-"right_knee_check": {
-"val": 187.7,
-"conclusion": "正常",
-"risk": "--"
-},
-"round_shoulder_left": {
-"val": 15.6,
-"conclusion": "正常",
-"risk": "--"
-},
-"round_shoulder_right": {
-"val": 15.6,
-"conclusion": "正常",
-"risk": "--"
-},
-"body_slope": {
-"val": 0,
-"conclusion": "正常",
-"risk": "--"
-}
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+		"high_low_shoudler": {
+			"val": 15.96,
+			"conclusion": "怒り肩/なで肩(左高)",
+			"risk": :怒り肩/なで肩は頚椎部の慢性的な痛みを引き起こす可能性があり、多くの場合、脊柱管狭窄症、骨盤変位、下肢の長さ不揃いを伴うことがあります。"
+		},
+		"head_slant": {
+			"val": 15.96,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"head_forward": {
+			"val": 15.96,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"leg_xo": {
+			"left_val": 184.3,
+			"right_val": 187.2,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"pelvis_forward": {
+			"val": 15.96,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"left_knee_check": {
+			"val": 175.4,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"right_knee_check": {
+			"val": 187.7,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"round_shoulder_left": {
+			"val": 15.6,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"round_shoulder_right": {
+			"val": 15.6,
+			"conclusion": "正常",
+			"risk": "--"
+		},
+		"body_slope": {
+			"val": 0,
+			"conclusion": "正常",
+			"risk": "--"
+		}
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名         | 類型     | 説明                                             |
@@ -693,7 +811,8 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | conclusion           | string   | 評価結論                                         |
 | risk                 | string   | リスクに関して　正常であれば"--"が表示されます。 |
 
-**3.4.3 各部位ごとの周囲長ファイルの取得**
+#### 3.4.3 各部位ごとの周囲長ファイルの取得
+
 **ポート説明：**
 
 - 身体全体の周囲長模型/各部位ごとの周囲長 json/各部位ごとの周囲長模型画像ファイルを取得するのに用います。
@@ -714,15 +833,19 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"model_url": "MODEL_URL",
-"json_url": "JSON_URL",
-"pic_measure_url": "PIC_MEASURE_URL",
-"expires_in": 7200
-}
-}
+
+```
+  {
+    "code": 0,
+    "data": {
+      "model_url": "MODEL_URL",
+      "json_url": "JSON_URL",
+	    "pic_measure_url": "PIC_MEASURE_URL",
+      "expires_in": 7200
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名    | 類型   | 説明                                                                                                                       |
@@ -732,7 +855,8 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | pic_measure_url | string | 各部位ごとの周囲長模型画像のファイルパス、ファイル形式＝.jpg                                                               |
 | expires_in      | int    | ファイルパス有効時間                                                                                                       |
 
-**3.4.4 各部位ごとの周囲長データの取得**
+#### 3.4.4 各部位ごとの周囲長データの取得
+
 **ポート説明：**
 
 - 測定した各部位ごとの周囲長データを取得するのに用います。
@@ -753,21 +877,25 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"bust_girth": 30.6,
-"waist_girth": 30.8,
-"hip_girth": 93.8,
-"left_upper_arm_girth": 90,
-"right_upper_arm_girth": 99.8,
-"left_thigh_girth": 58,
-"right_thigh_girth": 56.2,
-"left_calf_girth": 37.1,
-"right_calf_girth": 34.5,
-"height": 161.1
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+      "bust_girth": 30.6,
+      "waist_girth": 30.8,
+	    "hip_girth": 93.8,
+	  	"left_upper_arm_girth": 90,
+	  	"right_upper_arm_girth": 99.8,
+	  	"left_thigh_girth": 58,
+	  	"right_thigh_girth": 56.2,
+	  	"left_calf_girth": 37.1,
+	  	"right_calf_girth": 34.5,
+	  	"height": 161.1
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名          | 類型   | 説明            |
@@ -783,7 +911,8 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | right_calf_girth      | double | 右下腿囲(cm/in) |
 | height                | double | 入力身長(cm/in) |
 
-**3.5 肩部測定データおよび結論の取得**
+## 3.5 肩部測定データおよび結論の取得
+
 **ポート説明：**
 
 - 肩部測定データおよび結論を取得するのに用います。
@@ -804,43 +933,48 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | scan_id      | YES      | string | 読み取り ID |
 
 **リターン例**
-{
-"code": 0,
-"data": {
-"left_abuction": {
-"val": 25.5,
-"conclusion": "制限",
-"limit": "[150.0°~180.0°]"
-},
-"right_abuction": {
-"val": 25.5,
-"conclusion": "制限",
-"limit": "[150.0°~180.0°]"
-},
-"left_antexion": {
-"val": 45.5,
-"conclusion": "過大",
-"limit": "[120.0°~180.0°]"
-},
-"right_antexion": {
-"val": "--",
-"conclusion": "--",
-"limit": "--"
-},
-"conclusions": [
-{
-"title": "肩部関節活動範囲制限",
-"analysis": "肩関節の活動制限を受けています。多くは筋肉の緊張、鎖骨肩甲骨の活動度合いの不足で、頭/首/肩甲骨が中立状態にないことなどが原因です。正常な運動スタイル（スポーツ傷害につながる）だけでなく、五十肩、猫背、頚椎の痛みなど関連する病理学的問題を引き起こす可能性があります。また、長期間放置すると様々な肩関節の疾病を発生させてしまう恐れもあります。",
-"advice": "具体的な原因を専門家に見てもらい、さらなるスクリーニング検査と治療を受けてください。"
-},
-{
-"title": "肩部関節活動範囲が大きすぎます",
-"analysis": 肩関節の活動範囲が大きすぎます。多くは靭帯弛緩によるものが多いのですが（女性に多い）、肩の柔軟性を高めるトレーニングを定期的に行うことでも発生します。",
-"advice": "具体的な原因を専門家に見てもらい、さらなるスクリーニング検査と治療を受けてください。"
-}
-]
-}
-}
+
+```
+ {
+    "code": 0,
+    "data": {
+		"left_abuction": {
+			"val": 25.5,
+			"conclusion": "制限",
+			"limit": "[150.0°~180.0°]"
+		},
+		"right_abuction": {
+			"val": 25.5,
+			"conclusion": "制限",
+			"limit": "[150.0°~180.0°]"
+		},
+		"left_antexion": {
+			"val": 45.5,
+			"conclusion": "過大",
+			"limit": "[120.0°~180.0°]"
+		},
+		"right_antexion": {
+			"val": "--",
+			"conclusion": "--",
+			"limit": "--"
+		},
+		"conclusions": [
+			{
+				"title": "肩部関節活動範囲制限",
+				"analysis": "肩関節の活動制限を受けています。多くは筋肉の緊張、鎖骨肩甲骨の活動度合いの不足で、頭/首/肩甲骨が中立状態にないことなどが原因です。正常な運動スタイル（スポーツ傷害につながる）だけでなく、五十肩、猫背、頚椎の痛みなど関連する病理学的問題を引き起こす可能性があります。また、長期間放置すると様々な肩関節の疾病を発生させてしまう恐れもあります。",
+				"advice": "具体的な原因を専門家に見てもらい、さらなるスクリーニング検査と治療を受けてください。"
+			},
+			{
+				"title": "肩部関節活動範囲が大きすぎます",
+				"analysis": 肩関節の活動範囲が大きすぎます。多くは靭帯弛緩によるものが多いのですが（女性に多い）、肩の柔軟性を高めるトレーニングを定期的に行うことでも発生します。",
+				"advice": "具体的な原因を専門家に見てもらい、さらなるスクリーニング検査と治療を受けてください。"
+			}
+		]
+
+    }
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名   | 類型   | 説明                                                                                             |
@@ -857,14 +991,15 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | analysis       | string | 結論分析　すべての項目が正常範囲であればスペースの文字ストリングが返されます。                   |
 | advice         | string | 結論アドバイス　すべての項目が正常範囲であればスペースの文字ストリングが返されます。             |
 
-**3.6 プリントレポートの取得**
+## 3.6 プリントレポートの取得
+
 **ポート説明：**
 
 - プリントレポートファイルのポートを取得するのに用います。
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/reprot](http://api.vr-explorer.visbody.com/v1/reprot)
+- [http://api.vr-explorer.visbody.com/v1/report](http://api.vr-explorer.visbody.com/v1/reprot)
 
 **リクエスト方法：**
 
@@ -881,17 +1016,22 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 レポートの言語は
 $headers[]  =  "Language: $vfLanguage; // vfLanguage 転送可能な言語は en-US(アメリカ英語) / ja-JP(日本語) / zh-CN(中国語)
 リターン例
-{
-"code": 0,
-"data": "http://rexp-dev.visbody.com/reptfile/report/vr-exp/pdf/en-US/35042104086001-d0e23a52-0095-11ec-9e7e-300ed55249b1.pdf?_upt=9baa05fa1629365732.003"
-}
+
+```
+  {
+    "code": 0,
+    "data": "http://rexp-dev.visbody.com/reptfile/report/vr-exp/pdf/en-US/35042104086001-d0e23a52-0095-11ec-9e7e-300ed55249b1.pdf?_upt=9baa05fa1629365732.003"
+  }
+```
+
 **リターンパラメータの説明**
 
 | パラメータ名 | 類型   | 説明                         |
 | ------------ | ------ | ---------------------------- |
 | data         | string | ファイルのダウンロードリンク |
 
-**3.7 Visbody リターンステータスコードの説明**
+## 3.7 Visbody リターンステータスコードの説明
+
 Visbody のポート応答は HTTP のステータスコードおよびトラフィックステータスコードを介します。トラフィックステータスコードは response body 内のタグになります。
 
 | HTTP ステータスコード | トラフィックステータスコード | 備考                                                                                                                                |
@@ -907,7 +1047,8 @@ Visbody のポート応答は HTTP のステータスコードおよびトラフ
 | 400                   | 40008                        | ポート権限なし                                                                                                                      |
 | 400                   | 40009                        | 読み取り ID 紐付け済み                                                                                                              |
 
-**3.8 プッシュメッセージタイプとポート関連の説明**
+## 3.8 プッシュメッセージタイプとポート関連の説明
+
 **説明：**
 
 - 第三者サービスプロバイダーが API ポート用の 3.1.3 ポートを設定した後、、Visbody ユーザーの各測定結果は、当該ポートを介して関連した測定情報を第三者サービスプロバイダーにプッシュし、第三者サービスプロバイダーは測定項目の結合結果 status に基づき対応する Visbody データ結果ポートにアクセスします。
@@ -932,7 +1073,8 @@ Visbody のポート応答は HTTP のステータスコードおよびトラフ
 | eval_shoulder_status | 頸肩部測定             | 3.5                        |
 | pdf_status           | レポートプリントアウト | 3.6                        |
 
-**3.8.1 ポートに関する追加説明**：
+### 3.8.1 ポートに関する追加説明：
+
 プリントアウトレポートのポートはレポートを取得する際測定項目の中に少なくとも 1 つの項目が結合に成功していなければなりません。
 **その他：**
 
