@@ -426,6 +426,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | height    | 是   | int    | 身高  110 ~ 205 单位 cm                           |
 | birthday  | 是   | string | 生日 格式 yyyy-MM-dd 注意周岁范围需在 5 ~ 70 之间 |
 | token     | 是   | string | 接口凭证                                          |
+| name      | 是   | string | 用户昵称                                          |
 
 **正常时返回示例**
 
@@ -1013,7 +1014,7 @@ $headers[] = "pound:" ： $vfpound 请求身体成份返回数据 默认 数据�
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/reprot`
+- `http://api.vr-explorer.visbody.com/v1/report`
 
 **请求方式：**
 
