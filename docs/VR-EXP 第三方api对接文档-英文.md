@@ -442,6 +442,7 @@ $headers[] = "Authorization: Bearer ". $vfToken;
 | height         | Yes      | int    | Height (cm) 110-205                                                                      |
 | birthday       | Yes      | string | Date of birth, format: yyyy-MM-dd, note that the age range should be between 5 and 70    |
 | token          | Yes      | string | Interface credential                                                                     |
+| name           | yes      | string | What about users                                                                         |
 
 **Return example under normal operation **
 
