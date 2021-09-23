@@ -62,8 +62,8 @@
 
 ### 2.1 Naming rules
 
-https: //[domain name]/[version No.]/[interface name]
-For example: [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
+`https: //[domain name]/[version No.]/[interface name] `
+`For example`: [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
 
 | Example                     | Description    |
 | --------------------------- | -------------- |
@@ -85,13 +85,13 @@ http://api.vr-explorer.visbody.com/v2/token
 
 ### 2.3 POST submission methods
 
-Content-Type: application/json
+`Content-Type: application/json`
 
 ## 3. Interface description
 
 ### 3.1 Description of the third-party customer contact
 
-Currently support the API connection and QR code connection.
+`Currently support the API connection and QR code connection. `
 
 #### 1. API connection
 
@@ -116,8 +116,8 @@ After successful connection, Visbody will push the scan ID and relevant informat
 
 **Connection description: **
 
-- Apply for API connection privilege
-- Configure 3.1.1 and 3.1.3 interfaces through API connection settings in the Visbody management platform
+- `Apply for API connection privilege`
+- `Configure 3.1.1 and 3.1.3 interfaces through API connection settings in the Visbody management platform `
 
 #### 2. QR code connection
 
@@ -156,8 +156,8 @@ Replace the default serial number of the device, after scanning the code, jump t
 The customer should provide the address of the credentials to access third-party interfaces such as 3.1.2 and 3.1.3.
 **Request URL format requirements: **
 
-- <http|https>: //<domain name>/<path>
-- http://<host>:<port>/<path>
+- `<http|https>: //<domain name>/<path> `
+- `http://<host>:<port>/<path>`
 
 **Request method: **
 
@@ -206,8 +206,8 @@ The customer should provide the address of the credentials to access third-party
 QR code of results after the user has completed the measurement at the device end, provided by the third party
 **Request URL format requirements: **
 
-- <http|https>: //<domain name>/<path>
-- http://<host>:<port>/<path>
+- `<http|https>: //<domain name>/<path> `
+- `http://<host>:<port>/<path>`
 
 **Request method: **
 
@@ -255,8 +255,8 @@ QR code of results after the user has completed the measurement at the device en
 After scanning the QR code of the device, call the interface to push the anthropometry, posture, segment distribution results and scan-related information to the third-party services.
 **Request URL format requirements: **
 
-- <http|https>: //<domain name>/<path>
-- http://<host>:<port>/<path>
+- `<http|https>: //<domain name>/<path> `
+- `http://<host>:<port>/<path>`
 
 **Request method: **
 
@@ -351,8 +351,11 @@ Description: As for the above interface, the third-party customer should return 
 - Return the report data in the corresponding language and units according to the parameters in the request header
 
 Add languages and units to the request header
-$headers[]  =  "Unit: $vfUnit; // vfUnitTransferable parameter units are metric (metric unit) / imperial (imperial unit) 
-$headers[] =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN(Chinese) "Language: $vfLanguage; // vfLanguage
+
+```
+$headers[]  =  "Unit: $vfUnit; // vfUnitTransferable parameter units are metric (metric unit) / imperial (imperial unit)
+$headers[]  =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN(Chinese) "Language: $vfLanguage; // vfLanguage
+```
 
 ### 3.2.1 Acquisition of Visbody interface credential
 
@@ -406,29 +409,32 @@ $headers[] =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN(
 | expires_in     | int    | Credential valid time (s)                        |
 
 **Acquisition methods of vfid and vfsecret: **
-1. Create an account on the Visbody management system
-2. Apply for granting the API connection privilege
-3. The vfid and vfsecret can be obtained after the device connection page of the Visbody management system completes the API connection.
-**token use method **
 
-1. Input as a normal parameter in a request via POST or GET
-2. Add Authorization Bearer Token to the request header, taking php as an example
-   $headers[]  =  "Content-Type: application/json";
-$headers[] = "Authorization: Bearer ". $vfToken;
+1. Create an account on the Visbody management system
+2. Apply for granting the API connection privilege
+3. The vfid and vfsecret can be obtained after the device connection page of the Visbody management system completes the API connection.
+   **token use method **
+4. Input as a normal parameter in a request via POST or GET
+5. Add Authorization Bearer Token to the request header, taking php as an example
+
+```
+$headers[]  =  "Content-Type: application/json";
+$headers[]  =  "Authorization: Bearer ". $vfToken;
+```
 
 ### 3.2.2 Binding of user information
 
 **Interface description: **
 
--  When scanning the QR code of the device through the third-party app, the third party app will call this interface to inform the Visbody background service to initiate the synthesis request after the identities of user and equipment is verified by the background of the third-party app.
+- When scanning the QR code of the device through the third-party app, the third party app will call this interface to inform the Visbody background service to initiate the synthesis request after the identities of user and equipment is verified by the background of the third-party app.
 
 **Request URL: **
 
-- [http://api.vr-explorer.visbody.com/v1/dataBind](http://api.vr-explorer.visbody.com/v1/dataBind)
+- ​[http://api.vr-explorer.visbody.com/v1/dataBind](http://api.vr-explorer.visbody.com/v1/dataBind)
 
 **Request method: **
 
-- POST
+- ​POST
 
 **Parameter: **
 
@@ -492,11 +498,11 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL: **
 
-- [http://api.vr-explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
+- ​[http://api.vr-explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
 
 **Request method: **
 
--  GET
+- GET
 
 **Parameter: **
 
@@ -560,7 +566,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Interface description: **
 
--  User fat grade
+- User fat grade
 
 **Request URL: **
 
@@ -568,7 +574,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request method: **
 
-- GET
+- ​GET
 
 **Parameter: **
 
@@ -749,7 +755,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request method: **
 
-- GET
+- ​GET
 
 **Parameter: **
 

@@ -123,12 +123,12 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 客先から取得でき、3.1.2、3.1.3 などポート認証情報アドレスなどで第三者サービスプロバイダーのポートとアクセス可能にします。
 **リクエスト URL フォーマット要件：**
 
-- <http|https>://<ドメイン名>/<path>
-- http://<host>:<port>/<path>
+- `<http|https>://<ドメイン名>/<path>`
+- `http://<host>:<port>/<path>`
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -173,12 +173,12 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 ユーザー側がデバイスにて測定完了後の結果 QR コードで、第三者サービスプロバイダーから提供されます。
 **リクエスト URL フォーマット要件：**
 
-- <http|https>://<ドメイン名>/<path>
-- http://<host>:<port>/<path>
+- `<http|https>://<ドメイン名>/<path>`
+- `http://<host>:<port>/<path>`
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -222,12 +222,12 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 ユーザーがデバイス側で QR コードを読み取った後、身体測定/姿勢/局部分布結果および読み取った関連情報で、このポートから第三者サービスプロバイダーにプッシュメッセージに転用されます。
 **リクエスト URL フォーマット要件：**
 
-- <http|https>://<ドメイン名>/<path>
-- http://<host>:<port>/<path>
+- `<http|https>://<ドメイン名>/<path>`
+- `http://<host>:<port>/<path>`
 
 **リクエスト方法：**
 
-- POST
+- `POST`
 
 **パラメータ：**
 
@@ -318,8 +318,10 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 - リクエストヘッダー中のリターンパラメータに対応する言語と単位のレポートデータに基づき
   リクエストヘッダーの中に言語および単位を付加します。
 
-$headers[]  =  "Unit: $vfUnit; // vfUnit 転送可能なパラメータ単位はmetric(メトリック法) / imperial (ヤードポンド法）
-$headers[] = "Language: $vfLanguage; // vfLanguage 転送可能な言語は en-US(アメリカ英語) / ja-JP(日本語) / zh-CN(中国語)
+```
+$headers[] = “Unit: $vfUnit; // vfUnit 転送可能なパラメータ単位はmetric(メトリック法) / imperial (ヤードポンド法）
+$headers[] = “Language: $vfLanguage; // vfLanguage 転送可能な言語は en-US(アメリカ英語) / ja-JP(日本語) / zh-CN(中国語)
+```
 
 #### 3.2.1 Visbody ポート認証の取得
 
@@ -333,7 +335,7 @@ $headers[] = "Language: $vfLanguage; // vfLanguage 転送可能な言語は en-U
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -400,7 +402,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- POST
+- `POST`
 
 **パラメータ：**
 
@@ -468,7 +470,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -540,7 +542,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -582,7 +584,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -621,7 +623,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -671,7 +673,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -721,7 +723,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -823,7 +825,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -867,7 +869,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -923,7 +925,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
@@ -1003,7 +1005,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト方法：**
 
-- GET
+- `GET`
 
 **パラメータ：**
 
