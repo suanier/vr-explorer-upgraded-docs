@@ -95,7 +95,7 @@ http://api.vr-explorer.visbody.com/v2/token
 
 #### 1. API connection
 
-**Operation instruction: **
+**Operation instruction:**
 User measurement data can be acquired through the API interface provided by Visbody.
 After successful connection, Visbody will push the scan ID and relevant information through the 3.1.3 interface ∂ configured by the customer, the customer can obtain the data after accessing the corresponding interface according to the results of measurement items, see 3.8 for the relationship between the synthesis push type and interface
 ![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#clientId=u66b8d40c-bb71-4&from=paste&height=720&id=uc2a5aaf4&margin=%5Bobject%20Object%5D&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&size=75759&status=done&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&width=970)
@@ -114,14 +114,14 @@ After successful connection, Visbody will push the scan ID and relevant informat
 | 获取扫描数据                 | Acquire scanning data                               |
 | 返回数据                     | Return data                                         |
 
-**Connection description: **
+**Connection description:**
 
 - `Apply for API connection privilege`
 - `Configure 3.1.1 and 3.1.3 interfaces through API connection settings in the Visbody management platform `
 
 #### 2. QR code connection
 
-**Operation instruction: **
+**Operation instruction:**
 Replace the default serial number of the device, after scanning the code, jump to the customer's own APP or other platforms such as mini program, which requires customers to develop their own business logic for code scanning.
 ![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#clientId=u66b8d40c-bb71-4&from=paste&height=724&id=u05516d8c&margin=%5Bobject%20Object%5D&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&size=85752&status=done&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&width=980)
 
@@ -144,7 +144,7 @@ Replace the default serial number of the device, after scanning the code, jump t
 | 界面展示         | Interface display                   |
 | 返回扫描数据     | Return scanning data                |
 
-**Connection description: **
+**Connection description:**
 
 - Apply for API connection privilege
 - Configure 3.1.1, 3.1.2 and 3.1.3 interfaces through API connection settings in the Visbody management platform
@@ -152,25 +152,25 @@ Replace the default serial number of the device, after scanning the code, jump t
 
 ### 3.1.1 Acquisition of the third-party interface credential :id=third-token
 
-**Interface description: **
+**Interface description:**
 The customer should provide the address of the credentials to access third-party interfaces such as 3.1.2 and 3.1.3.
-**Request URL format requirements: **
+**Request URL format requirements:**
 
 - `<http|https>: //<domain name>/<path> `
 - `http://<host>:<port>/<path>`
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description                                                    |
 | -------------- | -------- | ------ | -------------------------------------------------------------- |
 | key            | Yes      | string | Unique user credential, provided by the third party            |
 | secret         | Yes      | string | Unique user credential secret key, provided by the third party |
 
-**Return example under normal operation **
+**Return example under normal operation**
 
 ```
   {
@@ -182,7 +182,7 @@ The customer should provide the address of the credentials to access third-party
   }
 ```
 
-**Return example under operation error **
+**Return example under operation error**
 
 ```
  {
@@ -191,7 +191,7 @@ The customer should provide the address of the credentials to access third-party
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                                        |
 | -------------- | ------ | -------------------------------------------------- |
@@ -202,18 +202,18 @@ The customer should provide the address of the credentials to access third-party
 
 ### 3.1.2 Interface for acquiring QR code from the third party :id=get-grcode
 
-**Interface description: **
+**Interface description:**
 QR code of results after the user has completed the measurement at the device end, provided by the third party
-**Request URL format requirements: **
+**Request URL format requirements:**
 
 - `<http|https>: //<domain name>/<path> `
 - `http://<host>:<port>/<path>`
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description                      |
 | -------------- | -------- | ------ | -------------------------------- |
@@ -221,7 +221,7 @@ QR code of results after the user has completed the measurement at the device en
 | device_id      | Yes      | string | Device ID                        |
 | token          | Yes      | string | Third-party interface credential |
 
-**Return example under normal operation **
+**Return example under normal operation**
 
 ```
  {
@@ -232,7 +232,7 @@ QR code of results after the user has completed the measurement at the device en
   }
 ```
 
-**Return example under operation error **
+**Return example under operation error**
 
 ```
  {
@@ -241,7 +241,7 @@ QR code of results after the user has completed the measurement at the device en
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                                        |
 | -------------- | ------ | -------------------------------------------------- |
@@ -251,18 +251,18 @@ QR code of results after the user has completed the measurement at the device en
 
 ### 3.1.3 Push of the synthesis notification by Visbody :id=notify
 
-**Interface description: **
+**Interface description:**
 After scanning the QR code of the device, call the interface to push the anthropometry, posture, segment distribution results and scan-related information to the third-party services.
-**Request URL format requirements: **
+**Request URL format requirements:**
 
 - `<http|https>: //<domain name>/<path> `
 - `http://<host>:<port>/<path>`
 
-**Request method: **
+**Request method:**
 
 - POST
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name       | Required | Type   | Description                                                                   |
 | -------------------- | -------- | ------ | ----------------------------------------------------------------------------- |
@@ -283,7 +283,7 @@ After scanning the QR code of the device, call the interface to push the anthrop
 | pdf_status           | No       | int    | Whether the pdf can be printed, 0 for no, 1 for yes                           |
 | token                | Yes      | string | Third-party interface credential                                              |
 
-**The format is as follows: **
+**The format is as follows:**
 
 ```
 {
@@ -310,7 +310,7 @@ After scanning the QR code of the device, call the interface to push the anthrop
 }
 ```
 
-**Return example under normal operation **
+**Return example under normal operation**
 
 ```
  {
@@ -319,7 +319,7 @@ After scanning the QR code of the device, call the interface to push the anthrop
 ```
 
 Notification requests must be responded to when received correctly, otherwise the Visbody service will initiate 3 retransmissions
-**Return example under operation error **
+**Return example under operation error**
 
 ```
  {
@@ -328,7 +328,7 @@ Notification requests must be responded to when received correctly, otherwise th
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                                        |
 | -------------- | ------ | -------------------------------------------------- |
@@ -359,26 +359,26 @@ $headers[]  =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN
 
 ### 3.2.1 Acquisition of Visbody interface credential
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the credentials for calling the Visbody interface
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description                                                            |
 | -------------- | -------- | ------ | ---------------------------------------------------------------------- |
 | key            | Yes      | string | Unique credential of the third-party user, namely, vfid                |
 | secret         | Yes      | string | Unique credential secret key of the third-party user, namely, vfsecret |
 
-**Return example under normal operation **
+**Return example under normal operation**
 
 ```
  {
@@ -390,7 +390,7 @@ $headers[]  =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN
   }
 ```
 
-**Return example under operation error **
+**Return example under operation error**
 
 ```
  {
@@ -399,7 +399,7 @@ $headers[]  =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                                      |
 | -------------- | ------ | ------------------------------------------------ |
@@ -408,12 +408,12 @@ $headers[]  =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN
 | token          | string | Interface credential                             |
 | expires_in     | int    | Credential valid time (s)                        |
 
-**Acquisition methods of vfid and vfsecret: **
+**Acquisition methods of vfid and vfsecret:**
 
 1. Create an account on the Visbody management system
 2. Apply for granting the API connection privilege
 3. The vfid and vfsecret can be obtained after the device connection page of the Visbody management system completes the API connection.
-   **token use method **
+   **token use method**
 4. Input as a normal parameter in a request via POST or GET
 5. Add Authorization Bearer Token to the request header, taking php as an example
 
@@ -424,19 +424,19 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.2.2 Binding of user information
 
-**Interface description: **
+**Interface description:**
 
 - When scanning the QR code of the device through the third-party app, the third party app will call this interface to inform the Visbody background service to initiate the synthesis request after the identities of user and equipment is verified by the background of the third-party app.
 
-**Request URL: **
+**Request URL:**
 
 - ​[http://api.vr-explorer.visbody.com/v1/dataBind](http://api.vr-explorer.visbody.com/v1/dataBind)
 
-**Request method: **
+**Request method:**
 
 - ​POST
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description                                                                              |
 | -------------- | -------- | ------ | ---------------------------------------------------------------------------------------- |
@@ -450,7 +450,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | token          | Yes      | string | Interface credential                                                                     |
 | name           | yes      | string | What about users                                                                         |
 
-**Return example under normal operation **
+**Return example under normal operation**
 
 ```
   {
@@ -461,7 +461,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return example under operation error **
+**Return example under operation error**
 
 ```
  {
@@ -470,7 +470,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type    | Description                                      |
 | -------------- | ------- | ------------------------------------------------ |
@@ -478,7 +478,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | error_msg      | string  | Error information                                |
 | result         | boolean | Initiate synthesis results                       |
 
-**token use method **
+**token use method**
 
 1. Input as a normal parameter in a request via POST or GET
 2. Add Authorization Bearer Token to the request header, taking php as an example
@@ -492,26 +492,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.3.1 Acquisition of body composition data
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the anthropometry and body composition data
 
-**Request URL: **
+**Request URL:**
 
 - ​[http://api.vr-explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
   {
@@ -533,7 +533,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                   |
 | -------------- | ------ | ----------------------------- |
@@ -550,7 +550,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | TM             | object | Inorganic salt (kg)           |
 | PROTEIN        | object | Protein (kg)                  |
 
-**Description of body composition range **
+**Description of body composition range**
 
 ```
 {
@@ -564,26 +564,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.3.2 Acquisition of user fat grade
 
-**Interface description: **
+**Interface description:**
 
 - User fat grade
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/body/state](http://api.vr-explorer.visbody.com/v1/body/state)
 
-**Request method: **
+**Request method:**
 
 - ​GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
  {
@@ -596,7 +596,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type | Description                                                                                    |
 | -------------- | ---- | ---------------------------------------------------------------------------------------------- |
@@ -606,19 +606,19 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.3.3 Acquisition of user body score
 
-**Interface description: **
+**Interface description:**
 
 - User body score
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/body/score](http://api.vr-explorer.visbody.com/v1/body/score)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description                                   |
 | -------------- | -------- | ------ | --------------------------------------------- |
@@ -626,7 +626,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | scan_id        | Yes      | string | Scan ID                                       |
 | scan_type      | Yes      | int    | Scan type: 1 for anthropometry, 2 for posture |
 
-**Return example **
+**Return example**
 
 ```
  {
@@ -637,7 +637,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type | Description  |
 | -------------- | ---- | ------------ |
@@ -645,26 +645,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.3.4 Acquisition of body composition adjustment data
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the body composition adjustment data
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vrpro3.visbody.com/v1/forecast/adjust](http://api.vrpro3.visbody.com/v1/forecast/adjust)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
   {
@@ -680,7 +680,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                       |
 | -------------- | ------ | --------------------------------- |
@@ -695,26 +695,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.4.1 Acquisition of posture file
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the posture model, key point json file and posture photo
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/shape/file](http://api.vr-explorer.visbody.com/v1/shape/file)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
 {
@@ -731,7 +731,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                                                                                                |
 | -------------- | ------ | ---------------------------------------------------------------------------------------------------------- |
@@ -745,26 +745,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.4.2 Acquisition of posture data
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the posture evaluation data
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/shape/points](http://api.vr-explorer.visbody.com/v1/shape/points)
 
-**Request method: **
+**Request method:**
 
 - ​GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
   {
@@ -825,7 +825,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name       | Type     | Description                   |
 | -------------------- | -------- | ----------------------------- |
@@ -847,26 +847,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.4.3 Acquisition of circumference file
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the body circumference model, circumference json, model circumference picture files
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/measure/file](http://api.vr-explorer.visbody.com/v1/measure/file)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
   {
@@ -880,7 +880,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name  | Type   | Description                                                                                                                                             |
 | --------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -891,26 +891,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.4.4 Acquisition of circumference data
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the circumference data after anthropometry
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/measure/girth](http://api.vr-explorer.visbody.com/v1/measure/girth)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
  {
@@ -930,7 +930,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name        | Type   | Description                        |
 | --------------------- | ------ | ---------------------------------- |
@@ -947,26 +947,26 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ## 3.5 Obtain the shoulder test data and conclusion
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the shoulder test data and conclusion
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/shoulder/data](http://api.vr-explorer.visbody.com/v1/shoulder/data)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
 | token          | Yes      | string | Interface credential |
 | scan_id        | Yes      | string | Scan ID              |
 
-**Return example **
+**Return example**
 
 ```
   {
@@ -1009,7 +1009,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description                                                                                                         |
 | -------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
@@ -1027,19 +1027,19 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ## 3.6 Acquisition of report printing
 
-**Interface description: **
+**Interface description:**
 
 - Obtain the file interface of the report printing
 
-**Request URL: **
+**Request URL:**
 
 - [http://api.vr-explorer.visbody.com/v1/report](http://api.vr-explorer.visbody.com/v1/reprot)
 
-**Request method: **
+**Request method:**
 
 - GET
 
-**Parameter: **
+**Parameter:**
 
 | Parameter name | Required | Type   | Description          |
 | -------------- | -------- | ------ | -------------------- |
@@ -1049,7 +1049,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 Request header has parameters
 Language of the report
 $headers[] = "Language: $vfLanguage; // vfLanguageTransferable languages are en-US(English) / ja-JP(Japanese) / zh-CN(Chinese)
-**Return example **
+**Return example**
 
 ```
  {
@@ -1058,7 +1058,7 @@ $headers[] = "Language: $vfLanguage; // vfLanguageTransferable languages are en-
   }
 ```
 
-**Return parameter description **
+**Return parameter description**
 
 | Parameter name | Type   | Description        |
 | -------------- | ------ | ------------------ |
@@ -1083,11 +1083,11 @@ The interface response of Visbody is distinguished by HTTP status code and busin
 
 ## 3.8 Description of relationship between the synthesis push type and interface
 
-**Description: **
+**Description:**
 
 - After the third-party customer has configured the 3.1.3 interface for API connection, Visbody will push the relevant measured data to the third party through this interface for each measurement by the user, and the third party will access the corresponding Visbody data result interface according to the synthetic result status of the measuring items
 
-**Relationship between the measuring items and the synthesis push type is as follows: **
+**Relationship between the measuring items and the synthesis push type is as follows:**
 
 | Measuring items    | Synthesis push item  |
 | ------------------ | -------------------- |
@@ -1097,7 +1097,7 @@ The interface response of Visbody is distinguished by HTTP status code and busin
 | Shoulder           | eval_shoulder_status |
 | Report printing    | pdf_status           |
 
-**Relationship between the synthesis push type and interface is as follows: **
+**Relationship between the synthesis push type and interface is as follows:**
 
 | Synthesis push item  | Description        | Accessible interface    |
 | -------------------- | ------------------ | ----------------------- |
