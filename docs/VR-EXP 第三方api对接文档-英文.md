@@ -63,7 +63,7 @@
 ### 2.1 Naming rules
 
 `https: //[domain name]/[version No.]/[interface name] `
-`For example`: [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
+For example: [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
 
 | Example                     | Description    |
 | --------------------------- | -------------- |
