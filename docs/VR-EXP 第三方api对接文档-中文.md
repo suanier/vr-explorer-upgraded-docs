@@ -1,10 +1,11 @@
 ## 修订记录
 
-| 日期       | 修订版本 | 修改描述     | 作者   |
-| ---------- | -------- | ------------ | ------ |
-| 2021/08/18 | V 1.0    | 新建         | 范云波 |
-| 2021/08/25 | V 1.0    | 迁移到语雀   | 杨升   |
-| 2021/09/02 | V 1.0    | 测试自动部署 | 杨升   |
+| 日期       | 修订版本 | 修改描述                                     | 作者   |
+| ---------- | -------- | -------------------------------------------- | ------ |
+| 2021/08/18 | V 1.0.0  | 新建                                         | 范云波 |
+| 2021/08/25 | V 1.0.1  | 迁移到语雀                                   | 杨升   |
+| 2021/09/02 | V 1.0.2  | 测试自动部署                                 | 杨升   |
+| 2021/11/30 | V 1.0.3  | 修改用户信息绑定接口，生日改为年龄并增加邮箱 | 杨升   |
 
 ## 目录
 
@@ -101,7 +102,7 @@ Content-Type: application/json
 可通过维塑提供的 API 接口获取用户测量数据。
 对接成功后维塑会通过客户配置的 3.1.3 接口推送扫描 ID 等相关信息，客户根据测量项目结果访问对应接口获取数据，合成推送类型与接口关系见 3.8 说明
 
-![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&from=ui&id=ua1ba2659&margin=%5Bobject%20Object%5D&name=%E7%AC%AC%E4%B8%89%E6%96%B9API%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=720&originWidth=972&originalType=binary&ratio=1&size=13557&status=done&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2)
+![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=ua1ba2659&margin=%5Bobject%20Object%5D&name=%E7%AC%AC%E4%B8%89%E6%96%B9API%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=720&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13557&status=done&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2&title=)
 
 **对接说明：**
 
@@ -113,7 +114,7 @@ Content-Type: application/json
 **使用说明：**
 替换设备默认的序列号，扫码后可跳转到客户自己的 APP 或小程序等其他平台，需客户自行开发扫码业务逻辑
 
-![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&from=ui&id=u17701254&margin=%5Bobject%20Object%5D&name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=725&originWidth=981&originalType=binary&ratio=1&size=19799&status=done&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c)
+![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u17701254&margin=%5Bobject%20Object%5D&name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=725&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&size=19799&status=done&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c&title=)
 
 **对接说明：**
 
@@ -248,8 +249,8 @@ Content-Type: application/json
 | time                 | 是   | date   | 完成时间 时间格式 2018-06-25 10:10:10    |
 | user_info            | 否   | object | 用户信息                                 |
 | age                  | 否   | int    | 年龄                                     |
-| birthday             | 否   | string | 生日                                     |
 | mobile               | 否   | string | 手机号                                   |
+| email                | 否   | string | 邮箱                                     |
 | sex                  | 否   | string | f 女，m 　男                             |
 | height               | 否   | int    | 身高                                     |
 | action_status        | 是   | object | 状态信息                                 |
@@ -266,9 +267,9 @@ Content-Type: application/json
 {
   "user_info": {
     "age": 26,
-    "birthday": "1992-12-12",
     "height": 178,
     "phone": "13812345678",
+    "email": "xxx@126.com",
     "sex": "f"
   },
   "action_status": {
@@ -416,17 +417,17 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **参数：**
 
-| 参数名    | 必选 | 类型   | 说明                                              |
-| --------- | ---- | ------ | ------------------------------------------------- |
-| scan_id   | 是   | string | 扫描 ID                                           |
-| device_id | 是   | string | 设备 ID                                           |
-| third_uid | 是   | string | 第三方用户唯一 Id 字母和数字 长度 8 ~ 40          |
-| email     | 是   | string | 邮箱                                              |
-| sex       | 是   | int    | 性别 1 男 2 女                                    |
-| height    | 是   | int    | 身高  110 ~ 205 单位 cm                           |
-| birthday  | 是   | string | 生日 格式 yyyy-MM-dd 注意周岁范围需在 5 ~ 70 之间 |
-| token     | 是   | string | 接口凭证                                          |
-| name      | 是   | string | 用户昵称                                          |
+| 参数名    | 必选 | 类型   | 说明                                     |
+| --------- | ---- | ------ | ---------------------------------------- |
+| scan_id   | 是   | string | 扫描 ID                                  |
+| device_id | 是   | string | 设备 ID                                  |
+| third_uid | 是   | string | 第三方用户唯一 Id 字母和数字 长度 8 ~ 40 |
+| email     | 是   | string | 邮箱                                     |
+| sex       | 是   | int    | 性别 1 男 2 女                           |
+| height    | 是   | int    | 身高 110 ~ 205 单位 cm                   |
+| age       | 是   | int    | 年龄 范围需在 5 ~ 70 之间                |
+| token     | 是   | string | 接口凭证                                 |
+| name      | 是   | string | 用户昵称                                 |
 
 **正常时返回示例**
 
