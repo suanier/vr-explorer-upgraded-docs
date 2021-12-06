@@ -63,13 +63,13 @@
 ### 2.1 命名規則
 
 https://[ドメイン名]/[バージョン]/[ポート名]
-例：http://api.vr-explorer.visbody.com/v1/token
+例：http://api.explorer.visbody.com/v1/token
 
-| 実例：                      | 説明       |
-| --------------------------- | ---------- |
-| api.vr-explorer.visbody.com | ドメイン名 |
-| v1                          | バージョン |
-| token                       | ポート名   |
+| 実例：                   | 説明       |
+| ------------------------ | ---------- |
+| api.explorer.visbody.com | ドメイン名 |
+| v1                       | バージョン |
+| token                    | ポート名   |
 
 ### 2.2 バージョンコントロール
 
@@ -78,9 +78,9 @@ https://[ドメイン名]/[バージョン]/[ポート名]
 ```
 HTTP GET:
 // v1バージョン
-http://api.vr-explorer.visbody.com/v1/token
+http://api.explorer.visbody.com/v1/token
 // v2バージョン
-http://api.vr-explorer.visbody.com/v2/token
+http://api.explorer.visbody.com/v2/token
 ```
 
 ### 2.3 POST 提出方法
@@ -331,7 +331,7 @@ $headers[] = “Language: $vfLanguage; // vfLanguage 転送可能な言語は en
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
+- [http://api.explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
 
 **リクエスト方法：**
 
@@ -398,7 +398,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/dataBind](http://api.vr-explorer.visbody.com/v1/dataBind)
+- [http://api.explorer.visbody.com/v1/dataBind](http://api.vr-explorer.visbody.com/v1/dataBind)
 
 **リクエスト方法：**
 
@@ -466,7 +466,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
+- [http://api.explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
 
 **リクエスト方法：**
 
@@ -538,7 +538,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/body/state](http://api.vr-explorer.visbody.com/v1/body/state)
+- [http://api.explorer.visbody.com/v1/body/state](http://api.vr-explorer.visbody.com/v1/body/state)
 
 **リクエスト方法：**
 
@@ -580,7 +580,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/body/score](http://api.vr-explorer.visbody.com/v1/body/score)
+- [http://api.explorer.visbody.com/v1/body/score](http://api.vr-explorer.visbody.com/v1/body/score)
 
 **リクエスト方法：**
 
@@ -669,7 +669,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/shape/file](http://api.vr-explorer.visbody.com/v1/shape/file)
+- [http://api.explorer.visbody.com/v1/shape/file](http://api.vr-explorer.visbody.com/v1/shape/file)
 
 **リクエスト方法：**
 
@@ -719,7 +719,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/shape/points](http://api.vr-explorer.visbody.com/v1/shape/points)
+- [http://api.explorer.visbody.com/v1/shape/points](http://api.vr-explorer.visbody.com/v1/shape/points)
 
 **リクエスト方法：**
 
@@ -821,7 +821,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/measure/file](http://api.vr-explorer.visbody.com/v1/measure/file)
+- [http://api.explorer.visbody.com/v1/measure/file](http://api.vr-explorer.visbody.com/v1/measure/file)
 
 **リクエスト方法：**
 
@@ -865,7 +865,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/measure/girth](http://api.vr-explorer.visbody.com/v1/measure/girth)
+- [http://api.explorer.visbody.com/v1/measure/girth](http://api.vr-explorer.visbody.com/v1/measure/girth)
 
 **リクエスト方法：**
 
@@ -921,7 +921,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/shoulder/data](http://api.vr-explorer.visbody.com/v1/shoulder/data)
+- [http://api.explorer.visbody.com/v1/shoulder/data](http://api.vr-explorer.visbody.com/v1/shoulder/data)
 
 **リクエスト方法：**
 
@@ -1001,7 +1001,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **リクエスト URL：**
 
-- [http://api.vr-explorer.visbody.com/v1/report](http://api.vr-explorer.visbody.com/v1/reprot)
+- [http://api.explorer.visbody.com/v1/report](http://api.vr-explorer.visbody.com/v1/reprot)
 
 **リクエスト方法：**
 

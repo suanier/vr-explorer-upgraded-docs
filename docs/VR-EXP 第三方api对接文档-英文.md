@@ -63,13 +63,13 @@
 ### 2.1 Naming rules
 
 `https: //[domain name]/[version No.]/[interface name] `
-For example: [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
+For example: [http://api.explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
 
-| Example                     | Description    |
-| --------------------------- | -------------- |
-| api.vr-explorer.visbody.com | Domain name    |
-| v1                          | Version No.    |
-| token                       | Interface name |
+| Example                  | Description    |
+| ------------------------ | -------------- |
+| api.explorer.visbody.com | Domain name    |
+| v1                       | Version No.    |
+| token                    | Interface name |
 
 ### 2.2 Version control
 
@@ -78,9 +78,9 @@ Interface version is controlled by routing
 ```
 HTTP GET:
 // v1
-http://api.vr-explorer.visbody.com/v1/token
+http://api.explorer.visbody.com/v1/token
 // v2
-http://api.vr-explorer.visbody.com/v2/token
+http://api.explorer.visbody.com/v2/token
 ```
 
 ### 2.3 POST submission methods
@@ -365,7 +365,7 @@ $headers[]  =Transferable languages are en-US(English) / ja-JP(Japanese) / zh-CN
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
+- [http://api.explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
 
 **Request method:**
 
@@ -430,7 +430,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- ​[http://api.vr-explorer.visbody.com/v1/dataBind](http://api.vr-explorer.visbody.com/v1/dataBind)
+- [http://api.explorer.visbody.com/v1/dataBind](http://api.vr-explorer.visbody.com/v1/dataBind)
 
 **Request method:**
 
@@ -498,7 +498,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- ​[http://api.vr-explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
+- [http://api.explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
 
 **Request method:**
 
@@ -570,7 +570,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/body/state](http://api.vr-explorer.visbody.com/v1/body/state)
+- [http://api.explorer.visbody.com/v1/body/state](http://api.vr-explorer.visbody.com/v1/body/state)
 
 **Request method:**
 
@@ -612,7 +612,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/body/score](http://api.vr-explorer.visbody.com/v1/body/score)
+- [http://api.explorer.visbody.com/v1/body/score](http://api.vr-explorer.visbody.com/v1/body/score)
 
 **Request method:**
 
@@ -701,7 +701,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/shape/file](http://api.vr-explorer.visbody.com/v1/shape/file)
+- [http://api.explorer.visbody.com/v1/shape/file](http://api.vr-explorer.visbody.com/v1/shape/file)
 
 **Request method:**
 
@@ -751,7 +751,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/shape/points](http://api.vr-explorer.visbody.com/v1/shape/points)
+- [http://api.explorer.visbody.com/v1/shape/points](http://api.vr-explorer.visbody.com/v1/shape/points)
 
 **Request method:**
 
@@ -853,7 +853,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/measure/file](http://api.vr-explorer.visbody.com/v1/measure/file)
+- [http://api.explorer.visbody.com/v1/measure/file](http://api.vr-explorer.visbody.com/v1/measure/file)
 
 **Request method:**
 
@@ -897,7 +897,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/measure/girth](http://api.vr-explorer.visbody.com/v1/measure/girth)
+- [http://api.explorer.visbody.com/v1/measure/girth](http://api.vr-explorer.visbody.com/v1/measure/girth)
 
 **Request method:**
 
@@ -953,7 +953,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/shoulder/data](http://api.vr-explorer.visbody.com/v1/shoulder/data)
+- [http://api.explorer.visbody.com/v1/shoulder/data](http://api.vr-explorer.visbody.com/v1/shoulder/data)
 
 **Request method:**
 
@@ -1033,7 +1033,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vr-explorer.visbody.com/v1/report](http://api.vr-explorer.visbody.com/v1/reprot)
+- [http://api.explorer.visbody.com/v1/report](http://api.vr-explorer.visbody.com/v1/reprot)
 
 **Request method:**
 
