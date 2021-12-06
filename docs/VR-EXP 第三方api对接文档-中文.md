@@ -66,7 +66,7 @@
 
 https://[域名]/[版本号]/[接口名]
 
-例：[http://api.vr-explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
+例：[http://api.explorer.visbody.com/v1/token](http://api.vr-explorer.visbody.com/v1/token)
 
 | 实例                        | 说明   |
 | --------------------------- | ------ |
@@ -81,9 +81,9 @@ https://[域名]/[版本号]/[接口名]
 ```
 HTTP GET:
 // v1版本
-http://api.vr-explorer.visbody.com/v1/token
+http://api.explorer.visbody.com/v1/token
 // v2版本
-http://api.vr-explorer.visbody.com/v2/token
+http://api.explorer.visbody.com/v2/token
 ```
 
 ### 2.3 POST 提交方式
@@ -345,7 +345,7 @@ $headers[]  =  "language: $vfLanguage; // vfLanguage 可传语言为 en-US(英�
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/token`
+- `http://api.explorer.visbody.com/v1/token`
 
 **请求方式：**
 
@@ -409,7 +409,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/dataBind`
+- `http://api.explorer.visbody.com/v1/dataBind`
 
 **请求方式：**
 
@@ -474,7 +474,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/body/mass`
+- `http://api.explorer.visbody.com/v1/body/mass`
 
 **请求方式：**
 
@@ -546,7 +546,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/body/state`
+- `http://api.explorer.visbody.com/v1/body/state`
 
 **请求方式：**
 
@@ -588,7 +588,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/body/score`
+- `http://api.explorer.visbody.com/v1/body/score`
 
 **请求方式：**
 
@@ -677,7 +677,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/shape/file`
+- `http://api.explorer.visbody.com/v1/shape/file`
 
 **请求方式：**
 
@@ -727,7 +727,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/shape/points`
+- `http://api.explorer.visbody.com/v1/shape/points`
 
 **请求方式：**
 
@@ -829,7 +829,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/measure/file`
+- `http://api.explorer.visbody.com/v1/measure/file`
 
 **请求方式：**
 
@@ -873,7 +873,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/measure/girth`
+- `http://api.explorer.visbody.com/v1/measure/girth`
 
 **请求方式：**
 
@@ -929,7 +929,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/shoulder/data`
+- `http://api.explorer.visbody.com/v1/shoulder/data`
 
 **请求方式：**
 
@@ -1008,7 +1008,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **请求 URL：**
 
-- `http://api.vr-explorer.visbody.com/v1/report`
+- `http://api.explorer.visbody.com/v1/report`
 
 **请求方式：**
 
