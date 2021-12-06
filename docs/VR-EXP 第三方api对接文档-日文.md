@@ -54,9 +54,9 @@
 
 | パラメータ名 | パラメータ値                                        |
 | ------------ | --------------------------------------------------- |
-| key          | vfE0ysl7UIdxKvuj                                    |
-| secret       | D3zgtDndlqcs3ygJLHVeeP03DuC9lbZR                    |
-| scanid       | 20041910080001-e3c39e63-9e8f-11ea-91e6-00d861a9ecd9 |
+| key          | vfbuqo5Tmnvrqe25                                    |
+| secret       | GpBIk52k83PGvyzkeFDtfCUs3kaX8vUg                    |
+| scanid       | 35042104080001-7254507f-50da-11ec-b365-300ed55248eb |
 
 ## 2. ポート規則
 
