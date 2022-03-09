@@ -434,7 +434,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request method:**
 
-- ​POST
+- POST
 
 **Parameter:**
 
@@ -574,7 +574,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request method:**
 
-- ​GET
+- GET
 
 **Parameter:**
 
@@ -755,7 +755,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request method:**
 
-- ​GET
+- GET
 
 **Parameter:**
 
