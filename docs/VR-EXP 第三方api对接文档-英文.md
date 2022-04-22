@@ -100,20 +100,6 @@ User measurement data can be acquired through the API interface provided by Visb
 After successful connection, Visbody will push the scan ID and relevant information through the 3.1.3 interface ∂ configured by the customer, the customer can obtain the data after accessing the corresponding interface according to the results of measurement items, see 3.8 for the relationship between the synthesis push type and interface
 ![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=720&id=uc2a5aaf4&margin=%5Bobject%20Object%5D&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75759&status=done&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&title=&width=970)
 
-| 客户                         | Customers                                           |
-| ---------------------------- | --------------------------------------------------- |
-| 第三方服务                   | Third-party service                                 |
-| В 端管理平台                 | B-end management platform                           |
-| 后台                         | Background                                          |
-| 维塑 API 服务                | Visbody's API service                               |
-| 配置 API 对接                | Configure API connection                            |
-| 返回 VFSECRET                | Return VFSECRET                                     |
-| 合成成功通知                 | Notify successful synthesis                         |
-| 通过 secret 获取维塑接口凭证 | Acquire Visbody interface credential through secret |
-| 返回接口凭证                 | Return interface credential                         |
-| 获取扫描数据                 | Acquire scanning data                               |
-| 返回数据                     | Return data                                         |
-
 **Connection description:**
 
 - `Apply for API connection privilege`
@@ -124,25 +110,6 @@ After successful connection, Visbody will push the scan ID and relevant informat
 **Operation instruction:**
 Replace the default serial number of the device, after scanning the code, jump to the customer's own APP or other platforms such as mini program, which requires customers to develop their own business logic for code scanning.
 ![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=724&id=u05516d8c&margin=%5Bobject%20Object%5D&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85752&status=done&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&title=&width=980)
-
-| 用户             | User                                |
-| ---------------- | ----------------------------------- |
-| 第三方服务       | Third-party service                 |
-| 设备端           | Device end                          |
-| 后台             | Background                          |
-| 维塑 API 服务    | Visbody's API service               |
-| 设备端请求二维码 | Device end requests QR code         |
-| 请求二维码接口   | Request QR code                     |
-| 返回二维码       | Return QR code                      |
-| 返回二维码       | Return QR code                      |
-| 用户信息绑定     | Bind user information               |
-| 绑定成功         | Successful binding                  |
-| 关闭二维码       | Close QR code                       |
-| 发起合成通知     | Initiate the synthesis notification |
-| 合成成功通知     | Notify successful synthesis         |
-| 获取扫描数据     | Acquire scanning data               |
-| 界面展示         | Interface display                   |
-| 返回扫描数据     | Return scanning data                |
 
 **Connection description:**
 
