@@ -414,7 +414,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | mobile       | YES      | string | 携帯電話                                                                                      |
 | sex          | YES      | int    | 性別　 1 ＝男性/2 ＝女性                                                                      |
 | height       | YES      | int    | 身長　 110 ～ 205（cm）                                                                       |
-| age          | YES      | int    | 年齢範囲は満 5 ～ 70 歳の間になります。                                                       |
+| age          | YES      | int    | 年齢範囲は満 10 ～ 99 歳の間になります。                                                       |
 | token        | YES      | string | ポート認証                                                                                    |
 | name         | YES      | string | ユーザーは                                                                                    |
 
