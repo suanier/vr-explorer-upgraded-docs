@@ -413,7 +413,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | mobile         | Yes      | string | Mobile phone No.                                                                         |
 | sex            | Yes      | int    | Gender 1. Male 2. Female                                                                 |
 | height         | Yes      | int    | Height (cm) 110-205                                                                      |
-| age            | Yes      | int    | note that the age range should be between 10 and 99                                       |
+| age            | Yes      | int    | note that the age range should be between 5 and 70                                       |
 | token          | Yes      | string | Interface credential                                                                     |
 | name           | yes      | string | What about users                                                                         |
 

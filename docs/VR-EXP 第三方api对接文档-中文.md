@@ -425,7 +425,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | email     | 是   | string | 邮箱                                     |
 | sex       | 是   | int    | 性别 1 男 2 女                           |
 | height    | 是   | int    | 身高 110 ~ 205 单位 cm                   |
-| age       | 是   | int    | 年龄 范围需在 10 ~ 99 之间                |
+| age       | 是   | int    | 年龄 范围需在 5 ~ 70 之间                |
 | token     | 是   | string | 接口凭证                                 |
 | name      | 是   | string | 用户昵称                                 |
 
