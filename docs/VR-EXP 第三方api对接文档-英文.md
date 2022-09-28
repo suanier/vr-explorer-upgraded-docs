@@ -98,7 +98,7 @@ http://api.explorer.visbody.com/v2/token
 **Operation instruction:**
 User measurement data can be acquired through the API interface provided by Visbody.
 After successful connection, Visbody will push the scan ID and relevant information through the 3.1.3 interface ∂ configured by the customer, the customer can obtain the data after accessing the corresponding interface according to the results of measurement items, see 3.8 for the relationship between the synthesis push type and interface
-![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=720&id=uc2a5aaf4&margin=%5Bobject%20Object%5D&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75759&status=done&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&title=&width=970)
+![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=720&id=uc2a5aaf4&margin=%5Bobject%20Object%5D&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75759&status=error&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&title=&width=970)
 
 **Connection description:**
 
@@ -109,7 +109,7 @@ After successful connection, Visbody will push the scan ID and relevant informat
 
 **Operation instruction:**
 Replace the default serial number of the device, after scanning the code, jump to the customer's own APP or other platforms such as mini program, which requires customers to develop their own business logic for code scanning.
-![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=724&id=u05516d8c&margin=%5Bobject%20Object%5D&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85752&status=done&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&title=&width=980)
+![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=724&id=u05516d8c&margin=%5Bobject%20Object%5D&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85752&status=error&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&title=&width=980)
 
 **Connection description:**
 
@@ -254,7 +254,7 @@ After scanning the QR code of the device, call the interface to push the anthrop
 
 ```
 {
-  "user_info": {
+  "data": {
     "age": 26,
     "birthday": "1992-12-12",
     "height": 178,
@@ -262,17 +262,14 @@ After scanning the QR code of the device, call the interface to push the anthrop
     "sex": "f"
   },
   "action_status":{
-    "measure_status":0,
-    "eval_status":0,
-    "bia_status":0,
-    "bodypredict_status":0,
-    "tchar_status":0,
-    "eval_dynamic_status":0
+    "eval_status": 0,
+    "bia_status": 0,
+    "girth_status": 0,
+    "eval_shoulder_status": 0
   },
-  "device_id": "20041910080001",
-  "scan_id": "20041910080001-a210136e-1bfb-11ea-b711-00d861a9ecd9",
+  "device_id": "35041910080001",
+  "scan_id": "35041910080001-a210136e-1bfb-11ea-b711-00d861a9ecd9",
   "time": "2019-12-11 17:56:15",
-  "pdf_status":1,
   "token": "TOKEN"
 }
 ```
@@ -618,7 +615,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.vrpro3.visbody.com/v1/forecast/adjust](http://api.vrpro3.visbody.com/v1/forecast/adjust)
+- [http://api.explorer.visbody.com/v1/forecast/adjust](http://api.explorer.visbody.com/v1/forecast/adjust)
 
 **Request method:**
 
