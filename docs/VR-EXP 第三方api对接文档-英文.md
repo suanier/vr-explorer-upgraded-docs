@@ -465,7 +465,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 **Request URL:**
 
-- [http://api.explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
+- [http://api.explorer.visbody.com/v1/body/mass](http://api.vr-explorer.visbody.com/v1/body/mass)
 
 **Request method:**
 
