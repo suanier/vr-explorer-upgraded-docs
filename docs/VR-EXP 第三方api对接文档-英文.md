@@ -21,6 +21,8 @@
 		3.2.2 Binding of user information
 	3.3 Acquisition of anthropometry file and data
 		3.3.1 Acquisition of body composition data
+			3.3.1-1 vr-explorer Acquisition of body composition data
+    	3.3.1-2 S30 Acquisition of body composition data
 		3.3.2 Acquisition of user fat grade
 		3.3.3 Acquisition of body score
 		3.3.4 Acquisition of body composition adjustment data
@@ -98,7 +100,7 @@ http://api.explorer.visbody.com/v2/token
 **Operation instruction:**
 User measurement data can be acquired through the API interface provided by Visbody.
 After successful connection, Visbody will push the scan ID and relevant information through the 3.1.3 interface ∂ configured by the customer, the customer can obtain the data after accessing the corresponding interface according to the results of measurement items, see 3.8 for the relationship between the synthesis push type and interface
-![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=720&id=uc2a5aaf4&margin=%5Bobject%20Object%5D&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75759&status=error&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&title=&width=970)
+![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#averageHue=%23f9f9f9&clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=720&id=uc2a5aaf4&margin=%5Bobject%20Object%5D&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75759&status=error&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&title=&width=970)
 
 **Connection description:**
 
@@ -109,7 +111,7 @@ After successful connection, Visbody will push the scan ID and relevant informat
 
 **Operation instruction:**
 Replace the default serial number of the device, after scanning the code, jump to the customer's own APP or other platforms such as mini program, which requires customers to develop their own business logic for code scanning.
-![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=724&id=u05516d8c&margin=%5Bobject%20Object%5D&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85752&status=error&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&title=&width=980)
+![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#averageHue=%23f7f7f7&clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=724&id=u05516d8c&margin=%5Bobject%20Object%5D&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85752&status=error&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&title=&width=980)
 
 **Connection description:**
 
@@ -456,6 +458,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 ### 3.3.1 Acquisition of body composition data
 
+#### 3.3.1-1 vr-explorer Acquisition of body composition data
+
 **Interface description:**
 
 - Obtain the anthropometry and body composition data
@@ -513,6 +517,83 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | SM             | object | Skeletal muscle mass (kg)     |
 | TM             | object | Inorganic salt (kg)           |
 | PROTEIN        | object | Protein (kg)                  |
+
+**Description of body composition range**
+
+```
+{
+	"l":10,        // Lower-limit value
+	"m":15,        // Standard value
+	"h":20,        // Upper-limit value
+	"v":30.3,      // Measured value
+	"status":3     // Status: 1 for low, 2 for normal, 3 for high
+}
+```
+
+#### 3.3.1-2 S30 vr-explorer Acquisition of body composition data
+
+**Interface description:**
+
+- Obtain the anthropometry and body composition data
+
+**Request URL:**
+
+- [http://api.explorer.visbody.com/v1/body/mass](http://api.vr-explorer.visbody.com/v1/body/mass)
+
+**Request method:**
+
+- GET
+
+**Parameter:**
+
+| Parameter name | Required | Type   | Description                     |
+| -------------- | -------- | ------ | ------------------------------- |
+| token          | Yes      | string | Interface credential            |
+| scan_id        | Yes      | string | Scan ID                         |
+| type           | No       | string | Device type: 1 is S30 data type |
+
+**Return example**
+
+```
+  {
+    "code": 0,
+    "data": {
+    	"WT": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "FFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "LM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "TBW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BMI": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "PBF": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BMR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "WHR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "SM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "TM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "PROTEIN": {"l":10,"m":15,"h":20,"v":30.3,"status":3}，
+			"ICW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+			"ECW": {"l":10,"m":15,"h":20,"v":30.3,"status":3}
+    }
+  }
+```
+
+**Return parameter description**
+
+| Parameter name | Type   | Description                   |
+| -------------- | ------ | ----------------------------- |
+| WT             | object | Weight (kg)                   |
+| FFM            | object | Fat free weight (kg)          |
+| BFM            | object | Body fat mass (kg)            |
+| LM             | object | Muscle mass (kgt)             |
+| TBW            | object | Body water content (kg)       |
+| BMI            | object | Body mass                     |
+| PBF            | object | Body fat percentage (%)       |
+| BMR            | object | Basal metabolic mass (kcal/d) |
+| WHR            | object | Waist-hip ratio               |
+| SM             | object | Skeletal muscle mass (kg)     |
+| TM             | object | Inorganic salt (kg)           |
+| PROTEIN        | object | Protein (kg)                  |
+| ICW            | object | Intracellular Water（kg）     |
+| ECW            | object | Extracellular Water（kg）     |
 
 **Description of body composition range**
 

@@ -21,6 +21,8 @@
 		3.2.2 ユーザー情報の関連付け
 	3.3 身体測定ファイルおよびデータの取得
 		3.3.1 体組成データの取得
+ 			3.3.1-1 vr-explorer 体組成データの取得
+    	3.3.1-2 S30 体組成データの取得
 		3.3.2 ユーザー脂肪率ランクの取得
 		3.3.3 身体評価点数の取得
 		3.3.4 体組成調節データの取得
@@ -100,7 +102,7 @@ Content-Type: application/json
 取扱説明:\*\* **
 Visbody が提供する API 接続を通じてユーザーの測定データを取得を可能にします。
 接続成功後 Visbody は客先が割り当てる 3.1.3 ポート ∂ を介して読み取り ID などの関連情報をプッシュし、客先は測定項目結果に基づき対応するポートにアクセスしデータを取得します。統合プッシュタイプおよびポートの関係は 3.8 の説明を参照ください。
-![lADPDh0cQih4YMvNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523493590-45959421-85e0-42a0-ac85-df18dccf5566.jpeg#clientId=uc3ed0b23-03a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=720&id=ua91dd0f0&margin=%5Bobject%20Object%5D&name=lADPDh0cQih4YMvNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=72507&status=done&style=none&taskId=u8972b851-80e0-419d-9778-4b83eae881d&title=&width=970)
+![lADPDh0cQih4YMvNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523493590-45959421-85e0-42a0-ac85-df18dccf5566.jpeg#averageHue=%23f9f9f9&clientId=uc3ed0b23-03a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=720&id=ua91dd0f0&margin=%5Bobject%20Object%5D&name=lADPDh0cQih4YMvNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=72507&status=done&style=none&taskId=u8972b851-80e0-419d-9778-4b83eae881d&title=&width=970)
 **接続説明：\*\*
 
 - API 接続権限のリクエスト
@@ -110,7 +112,7 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 
 **取扱説明: **
 デバイス初期設定のシリアル番号を変換し、コードを読み取った後客先自身の APP もしくはミニアプリなどその他プラットフォームにジャンプします。
-![lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523509769-569a5c59-7298-4e20-be77-b08d6107c018.jpeg#clientId=uc3ed0b23-03a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=724&id=u30fe8a45&margin=%5Bobject%20Object%5D&name=lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=81629&status=done&style=none&taskId=u287622da-acdd-42f7-a2c3-a04bb9fb066&title=&width=980)
+![lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523509769-569a5c59-7298-4e20-be77-b08d6107c018.jpeg#averageHue=%23f7f7f7&clientId=uc3ed0b23-03a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=724&id=u30fe8a45&margin=%5Bobject%20Object%5D&name=lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=81629&status=done&style=none&taskId=u287622da-acdd-42f7-a2c3-a04bb9fb066&title=&width=980)
 **接続説明：**
 
 - API 接続権限のリクエスト
@@ -460,6 +462,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 #### 3.3.1 体組成データの取得
 
+#### 3.3.1-1 vr-explorer 体組成データの取得
+
 **ポート説明：**
 
 - 身体測定体組成データを取得するのに用います。
@@ -517,6 +521,83 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | SM           | object | 骨格筋量(kg)        |
 | TM           | object | 無機塩(kg)          |
 | PROTEIN      | object | タンパク質(kg)      |
+
+**体組成範囲の説明**
+
+```
+{
+	"l":10,        // 下限値
+	"m":15,        // 標準値
+	"h":20,        // 上限値
+	"v":30.3,      // 測定値
+	"status":3     // 状態 1＝低，２＝正常，３＝高
+}
+```
+
+#### 3.3.1-2 vr-explorer 体組成データの取得
+
+**ポート説明：**
+
+- 身体測定体組成データを取得するのに用います。
+
+**リクエスト URL：**
+
+- [http://api.explorer.visbody.com/v1/measure/mass](http://api.vr-explorer.visbody.com/v1/measure/mass)
+
+**リクエスト方法：**
+
+- `GET`
+
+**パラメータ：**
+
+| パラメータ名 | 選択必須 | 類型   | 説明                                  |
+| ------------ | -------- | ------ | ------------------------------------- |
+| token        | YES      | string | ポート認証                            |
+| scan_id      | YES      | string | 読み取り ID                           |
+| type         | NO       | string | デバイスタイプ 1 は S 30 データタイプ |
+
+**リターン例**
+
+```
+ {
+    "code": 0,
+    "data": {
+    	"WT": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "FFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "LM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "TBW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BMI": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "PBF": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "BMR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "WHR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "SM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "TM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		  "PROTEIN": {"l":10,"m":15,"h":20,"v":30.3,"status":3}，
+			"ICW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+			"ECW": {"l":10,"m":15,"h":20,"v":30.3,"status":3}
+    }
+  }
+```
+
+**リターンパラメータの説明**
+
+| パラメータ名 | 類型   | 説明                |
+| ------------ | ------ | ------------------- |
+| WT           | object | 体重（kg）          |
+| FFM          | object | 除脂肪体重（kg）    |
+| BFM          | object | 体脂肪量(kg)        |
+| LM           | object | 筋肉量(kgt)         |
+| TBW          | object | 体内水分(kg)        |
+| BMI          | object | ボディマス指数(BMI) |
+| PBF          | object | 体脂肪率（%）       |
+| BMR          | object | 基礎代謝量(kcal/d)  |
+| WHR          | object | ウエストヒップ比    |
+| SM           | object | 骨格筋量(kg)        |
+| TM           | object | 無機塩(kg)          |
+| PROTEIN      | object | タンパク質(kg)      |
+| ICW          | object | 細胞内液（kg）      |
+| ECW          | object | 細胞外液（kg）      |
 
 **体組成範囲の説明**
 

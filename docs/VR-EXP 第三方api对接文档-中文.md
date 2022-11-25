@@ -6,6 +6,7 @@
 | 2021/08/25 | V 1.0.1  | 迁移到语雀                                   | 杨升   |
 | 2021/09/02 | V 1.0.2  | 测试自动部署                                 | 杨升   |
 | 2021/11/30 | V 1.0.3  | 修改用户信息绑定接口，生日改为年龄并增加邮箱 | 杨升   |
+| 2022/11/24 | v1.0.4   | 产品类型数据隔离区分                         |        |
 
 ## 目录
 
@@ -23,6 +24,8 @@
 		3.2.2 用户信息绑定
 	3.3 获取体测文件及数据
 		3.3.1 获取体成分数据
+      3.3.1-1 vr-explorer 获取体成分数据
+    	3.3.1-2 S30 获取体成分数据
 		3.3.2 获取用户脂肪等级
 		3.3.3 获取身体评分
 		3.3.4 获取身体成分调节数据
@@ -102,7 +105,7 @@ Content-Type: application/json
 可通过维塑提供的 API 接口获取用户测量数据。
 对接成功后维塑会通过客户配置的 3.1.3 接口推送扫描 ID 等相关信息，客户根据测量项目结果访问对应接口获取数据，合成推送类型与接口关系见 3.8 说明
 
-![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=ua1ba2659&margin=%5Bobject%20Object%5D&name=%E7%AC%AC%E4%B8%89%E6%96%B9API%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=720&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13557&status=done&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2&title=)
+![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=ui&id=ua1ba2659&margin=%5Bobject%20Object%5D&name=%E7%AC%AC%E4%B8%89%E6%96%B9API%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=720&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13557&status=error&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2&title=)
 
 **对接说明：**
 
@@ -114,7 +117,7 @@ Content-Type: application/json
 **使用说明：**
 替换设备默认的序列号，扫码后可跳转到客户自己的 APP 或小程序等其他平台，需客户自行开发扫码业务逻辑
 
-![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u17701254&margin=%5Bobject%20Object%5D&name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=725&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&size=19799&status=done&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c&title=)
+![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=ui&id=u17701254&margin=%5Bobject%20Object%5D&name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=725&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&size=19799&status=error&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c&title=)
 
 **对接说明：**
 
@@ -468,6 +471,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 #### 3.3.1 获取体成分数据
 
+#### 3.3.1-1 vr-explorer 获取体成分数据
+
 **接口描述：**
 
 - 用于获取体测体成分数据
@@ -536,6 +541,83 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
   "v": 30.3, // 测量值
   "status": 3 // 状态 1 低，２正常，３高
 }
+```
+
+#### 3.3.1-2 S30 获取体成分数据
+
+**接口描述：**
+
+- 用于获取体测体成分数据
+
+**请求 URL：**
+
+- `http://api.explorer.visbody.com/v1/body/mass`
+
+**请求方式：**
+
+- GET
+
+**参数：**
+
+| 参数名  | 必选 | 类型   | 说明                       |
+| ------- | ---- | ------ | -------------------------- |
+| token   | 是   | string | 接口凭证                   |
+| scan_id | 是   | string | 扫描 ID                    |
+| type    | 否   | string | 设备类型 1 为 S30 数据类型 |
+
+**返回示例**
+
+```
+  {
+    "code": 0,
+    "data": {
+    	"WT": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"FFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"BFM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"LM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"TBW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"BMI": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"PBF": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"BMR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"WHR": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"SM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"TM": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"PROTEIN": {"l":10,"m":15,"h":20,"v":30.3,"status":3}，
+		"ICW": {"l":10,"m":15,"h":20,"v":30.3,"status":3},
+		"ECW": {"l":10,"m":15,"h":20,"v":30.3,"status":3}
+    }
+  }
+```
+
+**返回参数说明**
+
+| 参数名  | 类型   | 说明                 |
+| ------- | ------ | -------------------- |
+| WT      | object | 体重（kg）           |
+| FFM     | object | 去脂体重（kg）       |
+| BFM     | object | 体脂肪量（kg）       |
+| LM      | object | 肌肉量（kg）         |
+| TBW     | object | 身体水分（kg）       |
+| BMI     | object | 身体质量             |
+| PBF     | object | 体脂肪率（%）        |
+| BMR     | object | 基础代谢量（kcal/d） |
+| WHR     | object | 腰臀比               |
+| SM      | object | 骨骼肌量（kg）       |
+| TM      | object | 无机盐（kg）         |
+| PROTEIN | object | 蛋白质（kg）         |
+| ICW     | object | 细胞内液（kg）       |
+| ECW     | object | 细胞外液（kg）       |
+
+**体成分范围说明**
+
+```
+  {
+	"l":10,        // 下限值
+	"m":15,        // 标准值
+	"h":20,        // 上限值
+	"v":30.3,      // 测量值
+	"status":3     // 状态 1 低，２正常，３高
+  }
 ```
 
 #### 3.3.2 获取用户脂肪等级
