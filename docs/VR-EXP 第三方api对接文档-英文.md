@@ -961,7 +961,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
  {
     "code": 0,
     "data": {
-      "bust_girth": 30.6,
+      "Chest_girth": 30.6,
       "waist_girth": 30.8,
 	    "hip_girth": 93.8,
 	  	"left_upper_arm_girth": 90,
@@ -979,7 +979,7 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 
 | Parameter name        | Type   | Description                        |
 | --------------------- | ------ | ---------------------------------- |
-| bust_girth            | double | Chest circumference (cm/in)        |
+| Chest_girth           | double | Chest circumference (cm/in)        |
 | waist_girth           | double | Waistline (cm/in)                  |
 | hip_girth             | double | Hipline (cm/in)                    |
 | left_upper_arm_girth  | double | Left biceps circumference (cm/in)  |
