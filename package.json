@@ -1,6 +1,6 @@
 {
   "name": "vr-explorer-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vr-explorer 第三方api对接文档",
   "main": "index.js",
   "scripts": {
