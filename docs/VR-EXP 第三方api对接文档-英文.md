@@ -19,7 +19,7 @@
 	3.2 Acquisition of Visbody interface credential
 		3.2.1 Acquisition of Visbody interface credential
 		3.2.2 Binding of user information
-	3.3 Acquisition of body composition file and data
+	3.3 Acquisition of anthropometry file and data
 		3.3.1 Acquisition of body composition data
 			3.3.1-1 vr-explorer Acquisition of body composition data
     	3.3.1-2 S30 Acquisition of body composition data
@@ -29,12 +29,12 @@
 	3.4 Acquisition of posture file and data
 		3.4.1 Acquisition of posture file
 		3.4.2 Acquisition of posture data
-		3.4.3 Acquisition of body measurements file
-		3.4.4 Acquisition of body measurements data
+		3.4.3 Acquisition of circumference file
+		3.4.4 Acquisition of circumference data
 	3.5 Acquisition of shoulder test data
 	3.6 Acquisition of report printing
 	3.7 Description of Visbody return status code
-	3.8 Description of relationship between the synthesized push type and interface
+	3.8 Description of relationship between the synthesis push type and interface
 ```
 
 ## 1. File description
