@@ -6,7 +6,8 @@
 | 2021/08/25 | V 1.0.1  | 迁移到语雀                                   | 杨升   |
 | 2021/09/02 | V 1.0.2  | 测试自动部署                                 | 杨升   |
 | 2021/11/30 | V 1.0.3  | 修改用户信息绑定接口，生日改为年龄并增加邮箱 | 杨升   |
-| 2022/11/24 | v1.0.4   | 产品类型数据隔离区分                         |        |
+| 2022/11/24 | v1.0.4   | 产品类型数据隔离区分                         | 范云波 |
+| 2023/03/14 | v1.0.5   | 体围增加 6 个围度值                          | 范云波 |
 
 ## 目录
 
@@ -105,7 +106,7 @@ Content-Type: application/json
 可通过维塑提供的 API 接口获取用户测量数据。
 对接成功后维塑会通过客户配置的 3.1.3 接口推送扫描 ID 等相关信息，客户根据测量项目结果访问对应接口获取数据，合成推送类型与接口关系见 3.8 说明
 
-![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=ui&id=ua1ba2659&margin=%5Bobject%20Object%5D&name=%E7%AC%AC%E4%B8%89%E6%96%B9API%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=720&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13557&status=error&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2&title=)
+![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&errorMessage=unknown%20error&from=ui&id=ua1ba2659&name=%E7%AC%AC%E4%B8%89%E6%96%B9API%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=720&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13557&status=error&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2&title=)
 
 **对接说明：**
 
@@ -117,7 +118,7 @@ Content-Type: application/json
 **使用说明：**
 替换设备默认的序列号，扫码后可跳转到客户自己的 APP 或小程序等其他平台，需客户自行开发扫码业务逻辑
 
-![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=ui&id=u17701254&margin=%5Bobject%20Object%5D&name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=725&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&size=19799&status=error&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c&title=)
+![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&errorMessage=unknown%20error&from=ui&id=u17701254&name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=725&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&size=19799&status=error&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c&title=)
 
 **对接说明：**
 
@@ -974,34 +975,46 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 {
   "code": 0,
   "data": {
-    "bust_girth": 30.6,
-    "waist_girth": 30.8,
-    "hip_girth": 93.8,
-    "left_upper_arm_girth": 90,
-    "right_upper_arm_girth": 99.8,
-    "left_thigh_girth": 58,
-    "right_thigh_girth": 56.2,
-    "left_calf_girth": 37.1,
-    "right_calf_girth": 34.5,
-    "height": 161.1
+    "bust_girth": 0,
+    "waist_girth": 0,
+    "hip_girth": 0,
+    "left_upperArm_girth": 0,
+    "right_upperArm_girth": 0,
+    "left_thigh_girth": 0,
+    "right_thigh_girth": 0,
+    "left_calf_girth": 0,
+    "right_calf_girth": 0,
+    "height": 0,
+    "neck_girth": 0,
+    "left_mid_thigh_girth": 0,
+    "left_min_thigh_girth": 0,
+    "right_min_thigh_girth": 0,
+    "right_mid_thigh_girth": 0,
+    "mid_waist_girth": 0
   }
 }
 ```
 
 **返回参数说明**
 
-| 参数名                | 类型   | 说明            |
-| --------------------- | ------ | --------------- |
-| bust_girth            | double | 胸围(cm/in)     |
-| waist_girth           | double | 腰围(cm/in)     |
-| hip_girth             | double | 臀围(cm/in)     |
-| left_upper_arm_girth  | double | 左上臂围(cm/in) |
-| right_upper_arm_girth | double | 右上臂围(cm/in) |
-| left_thigh_girth      | double | 左大腿围(cm/in) |
-| right_thigh_girth     | double | 右大腿围(cm/in) |
-| left_calf_girth       | double | 左小腿围(cm/in) |
-| right_calf_girth      | double | 右小腿围(cm/in) |
-| height                | double | 输入身高(cm/in) |
+| 参数名                | 类型   | 说明                |
+| --------------------- | ------ | ------------------- |
+| neck_girth            | double | 颈围(cm/in)         |
+| left_upper_arm_girth  | double | 左上臂围(cm/in)     |
+| right_upper_arm_girth | double | 右上臂围(cm/in)     |
+| bust_girth            | double | 胸围(cm/in)         |
+| waist_girth           | double | 高腰围(cm/in)       |
+| mid_waist_girth       | double | 中腰围(cm/in)       |
+| hip_girth             | double | 臀围(cm/in)         |
+| left_thigh_girth      | double | 左大腿围(cm/in)     |
+| left_mid_thigh_girth  | double | 左大腿中部围(cm/in) |
+| right_min_thigh_girth | double | 左大腿最小围(cm/in) |
+| right_thigh_girth     | double | 右大腿围(cm/in)     |
+| right_mid_thigh_girth | double | 右大腿中部围(cm/in) |
+| right_min_thigh_girth | double | 右大腿最小围(cm/in) |
+| left_calf_girth       | double | 左小腿围(cm/in)     |
+| right_calf_girth      | double | 右小腿围(cm/in)     |
+| height                | double | 输入身高(cm/in)     |
 
 ## 3.5 获取肩部检测数据及结论
 

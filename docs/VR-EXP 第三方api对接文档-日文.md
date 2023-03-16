@@ -102,7 +102,7 @@ Content-Type: application/json
 取扱説明:\*\* **
 Visbody が提供する API 接続を通じてユーザーの測定データを取得を可能にします。
 接続成功後 Visbody は客先が割り当てる 3.1.3 ポート ∂ を介して読み取り ID などの関連情報をプッシュし、客先は測定項目結果に基づき対応するポートにアクセスしデータを取得します。統合プッシュタイプおよびポートの関係は 3.8 の説明を参照ください。
-![lADPDh0cQih4YMvNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523493590-45959421-85e0-42a0-ac85-df18dccf5566.jpeg#averageHue=%23f9f9f9&clientId=uc3ed0b23-03a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=720&id=ua91dd0f0&margin=%5Bobject%20Object%5D&name=lADPDh0cQih4YMvNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=72507&status=done&style=none&taskId=u8972b851-80e0-419d-9778-4b83eae881d&title=&width=970)
+![lADPDh0cQih4YMvNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523493590-45959421-85e0-42a0-ac85-df18dccf5566.jpeg#averageHue=%23f9f9f9&clientId=uc3ed0b23-03a2-4&from=paste&height=720&id=ua91dd0f0&name=lADPDh0cQih4YMvNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=72507&status=done&style=none&taskId=u8972b851-80e0-419d-9778-4b83eae881d&title=&width=970)
 **接続説明：\*\*
 
 - API 接続権限のリクエスト
@@ -112,7 +112,7 @@ Visbody が提供する API 接続を通じてユーザーの測定データを�
 
 **取扱説明: **
 デバイス初期設定のシリアル番号を変換し、コードを読み取った後客先自身の APP もしくはミニアプリなどその他プラットフォームにジャンプします。
-![lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523509769-569a5c59-7298-4e20-be77-b08d6107c018.jpeg#averageHue=%23f7f7f7&clientId=uc3ed0b23-03a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=724&id=u30fe8a45&margin=%5Bobject%20Object%5D&name=lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=81629&status=done&style=none&taskId=u287622da-acdd-42f7-a2c3-a04bb9fb066&title=&width=980)
+![lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523509769-569a5c59-7298-4e20-be77-b08d6107c018.jpeg#averageHue=%23f7f7f7&clientId=uc3ed0b23-03a2-4&from=paste&height=724&id=u30fe8a45&name=lADPDhmOw4OyeKjNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=81629&status=done&style=none&taskId=u287622da-acdd-42f7-a2c3-a04bb9fb066&title=&width=980)
 **接続説明：**
 
 - API 接続権限のリクエスト
@@ -965,34 +965,46 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
  {
     "code": 0,
     "data": {
-      "bust_girth": 30.6,
-      "waist_girth": 30.8,
-	    "hip_girth": 93.8,
-	  	"left_upper_arm_girth": 90,
-	  	"right_upper_arm_girth": 99.8,
-	  	"left_thigh_girth": 58,
-	  	"right_thigh_girth": 56.2,
-	  	"left_calf_girth": 37.1,
-	  	"right_calf_girth": 34.5,
-	  	"height": 161.1
+     "bust_girth": 0,
+      "waist_girth": 0,
+      "hip_girth": 0,
+      "left_upperArm_girth": 0,
+      "right_upperArm_girth": 0,
+      "left_thigh_girth": 0,
+      "right_thigh_girth": 0,
+      "left_calf_girth": 0,
+      "right_calf_girth": 0,
+      "height": 0,
+      "neck_girth": 0,
+      "left_mid_thigh_girth": 0,
+      "left_min_thigh_girth": 0,
+      "right_min_thigh_girth": 0,
+      "right_mid_thigh_girth": 0,
+      "mid_waist_girth": 0
     }
   }
 ```
 
 **リターンパラメータの説明**
 
-| パラメータ名          | 類型   | 説明            |
-| --------------------- | ------ | --------------- |
-| bust_girth            | double | 胸囲(cm/in)     |
-| waist_girth           | double | ウエスト(cm/in) |
-| hip_girth             | double | ヒップ(cm/in)   |
-| left_upper_arm_girth  | double | 左上腕囲(cm/in) |
-| right_upper_arm_girth | double | 右上腕囲(cm/in) |
-| left_thigh_girth      | double | 左大腿囲(cm/in) |
-| right_thigh_girth     | double | 右大腿囲(cm/in) |
-| left_calf_girth       | double | 左下腿囲(cm/in) |
-| right_calf_girth      | double | 右下腿囲(cm/in) |
-| height                | double | 入力身長(cm/in) |
+| パラメータ名          | 類型   | 説明                      |
+| --------------------- | ------ | ------------------------- |
+| neck_girth            | double | 頸部周囲長(cm/in)         |
+| left_upper_arm_girth  | double | 左上腕周囲(cm/in)         |
+| right_upper_arm_girth | double | 右上腕部周囲(cm/in)       |
+| bust_girth            | double | バスト(cm/in)             |
+| waist_girth           | double | ハイウエスト(cm/in)       |
+| mid_waist_girth       | double | ミッドウエスト(cm/in)     |
+| hip_girth             | double | ヒップ(cm/in)             |
+| left_thigh_girth      | double | 左大腿部(cm/in)           |
+| left_mid_thigh_girth  | double | 左大腿中央部周囲(cm/in)   |
+| right_min_thigh_girth | double | 左大腿部最小外周(cm/in)   |
+| right_thigh_girth     | double | 右大腿部周囲(cm/in)       |
+| right_mid_thigh_girth | double | 右大腿中央部(cm/in)       |
+| right_min_thigh_girth | double | 右大腿部最小外周(cm/in)   |
+| left_calf_girth       | double | 左足ふくらはぎ周長(cm/in) |
+| right_calf_girth      | double | 右足ふくらはぎ周囲(cm/in) |
+| height                | double | 入力身長(cm/in)           |
 
 ## 3.5 肩部測定データおよび結論の取得
 

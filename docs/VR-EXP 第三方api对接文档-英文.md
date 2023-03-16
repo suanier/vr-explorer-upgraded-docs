@@ -100,7 +100,7 @@ http://api.explorer.visbody.com/v2/token
 **Operation instruction:**
 User measurement data can be acquired through the API interface provided by Visbody.
 After successful connection, Visbody will push the scan ID and relevant information through the 3.1.3 interface ∂ configured by the customer, the customer can obtain the data after accessing the corresponding interface according to the results of measurement items, see 3.8 for the relationship between the synthesis push type and interface
-![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#averageHue=%23f9f9f9&clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=720&id=uc2a5aaf4&margin=%5Bobject%20Object%5D&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75759&status=error&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&title=&width=970)
+![lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523418195-c0f80ab8-a9d1-4992-8624-accd7f249f9b.jpeg#averageHue=%23f9f9f9&clientId=u66b8d40c-bb71-4&errorMessage=unknown%20error&from=paste&height=720&id=uc2a5aaf4&name=lADPDg7mR5VeYMnNAtDNA8o_970_720.jpg&originHeight=720&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75759&status=error&style=none&taskId=u11d6e51d-123c-43ce-8b00-56c92e6e479&title=&width=970)
 
 **Connection description:**
 
@@ -111,7 +111,7 @@ After successful connection, Visbody will push the scan ID and relevant informat
 
 **Operation instruction:**
 Replace the default serial number of the device, after scanning the code, jump to the customer's own APP or other platforms such as mini program, which requires customers to develop their own business logic for code scanning.
-![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#averageHue=%23f7f7f7&clientId=u66b8d40c-bb71-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&height=724&id=u05516d8c&margin=%5Bobject%20Object%5D&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85752&status=error&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&title=&width=980)
+![lADPDiCpwM0313nNAtTNA9Q_980_724.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/21651137/1631523439940-828bcb72-4887-42fb-b84f-8c2dec5dbffe.jpeg#averageHue=%23f7f7f7&clientId=u66b8d40c-bb71-4&errorMessage=unknown%20error&from=paste&height=724&id=u05516d8c&name=lADPDiCpwM0313nNAtTNA9Q_980_724.jpg&originHeight=724&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85752&status=error&style=none&taskId=u7ba4b739-5aa7-4e75-b175-caace650f30&title=&width=980)
 
 **Connection description:**
 
@@ -961,34 +961,46 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
  {
     "code": 0,
     "data": {
-      "Chest_girth": 30.6,
-      "waist_girth": 30.8,
-	    "hip_girth": 93.8,
-	  	"left_upper_arm_girth": 90,
-	  	"right_upper_arm_girth": 99.8,
-	  	"left_thigh_girth": 58,
-	  	"right_thigh_girth": 56.2,
-	  	"left_calf_girth": 37.1,
-	  	"right_calf_girth": 34.5,
-	  	"height": 161.1
+     "bust_girth": 0,
+      "waist_girth": 0,
+      "hip_girth": 0,
+      "left_upperArm_girth": 0,
+      "right_upperArm_girth": 0,
+      "left_thigh_girth": 0,
+      "right_thigh_girth": 0,
+      "left_calf_girth": 0,
+      "right_calf_girth": 0,
+      "height": 0,
+      "neck_girth": 0,
+      "left_mid_thigh_girth": 0,
+      "left_min_thigh_girth": 0,
+      "right_min_thigh_girth": 0,
+      "right_mid_thigh_girth": 0,
+      "mid_waist_girth": 0
     }
   }
 ```
 
 **Return parameter description**
 
-| Parameter name        | Type   | Description                        |
-| --------------------- | ------ | ---------------------------------- |
-| Chest_girth           | double | Chest circumference (cm/in)        |
-| waist_girth           | double | Waistline (cm/in)                  |
-| hip_girth             | double | Hipline (cm/in)                    |
-| left_upper_arm_girth  | double | Left biceps circumference (cm/in)  |
-| right_upper_arm_girth | double | Right biceps circumference (cm/in) |
-| left_thigh_girth      | double | Left thigh circumference (cm/in)   |
-| right_thigh_girth     | double | Right thigh circumference (cm/in)  |
-| left_calf_girth       | double | Right calf circumference (cm/in)   |
-| right_calf_girth      | double | Right calf circumference (cm/in)   |
-| height                | double | Input the height (cm/in)           |
+| Parameter name        | Type   | Description                                 |
+| --------------------- | ------ | ------------------------------------------- |
+| neck_girth            | double | Neck circumference(cm/in)                   |
+| left_upper_arm_girth  | double | Left upper arm(cm/in)                       |
+| right_upper_arm_girth | double | Right upper arm(cm/in)                      |
+| bust_girth            | double | Bust(cm/in)                                 |
+| waist_girth           | double | High Waist(cm/in)                           |
+| mid_waist_girth       | double | Mid Waist(cm/in)                            |
+| hip_girth             | double | Hipline(cm/in)                              |
+| left_thigh_girth      | double | Left thigh(cm/in)                           |
+| left_mid_thigh_girth  | double | Left thigh middle(cm/in)                    |
+| right_min_thigh_girth | double | Minimum circumference of left thigh(cm/in)  |
+| right_thigh_girth     | double | Right thigh circumference(cm/in)            |
+| right_mid_thigh_girth | double | Right thigh circumference(cm/in)            |
+| right_min_thigh_girth | double | Minimum circumference of right thigh(cm/in) |
+| left_calf_girth       | double | Left calf circumference(cm/in)              |
+| right_calf_girth      | double | Right calf circumference(cm/in)             |
+| height                | double | Enter height(cm/in)                         |
 
 ## 3.5 Obtain the shoulder test data and conclusion
 
