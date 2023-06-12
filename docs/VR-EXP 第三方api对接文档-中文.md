@@ -277,12 +277,10 @@ Content-Type: application/json
     "sex": "f"
   },
   "action_status": {
-    "measure_status": 0,
     "eval_status": 0,
     "bia_status": 0,
-    "bodypredict_status": 0,
-    "tchar_status": 0,
-    "eval_dynamic_status": 0
+    "girth_status": 0,
+    "eval_shoulder_status": 0
   },
   "device_id": "20041910080001",
   "scan_id": "20041910080001-a210136e-1bfb-11ea-b711-00d861a9ecd9",
