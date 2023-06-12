@@ -106,7 +106,7 @@ Content-Type: application/json
 可通过维塑提供的 API 接口获取用户测量数据。
 对接成功后维塑会通过客户配置的 3.1.3 接口推送扫描 ID 等相关信息，客户根据测量项目结果访问对应接口获取数据，合成推送类型与接口关系见 3.8 说明
 
-![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&errorMessage=unknown%20error&from=ui&id=ua1ba2659&name=%E7%AC%AC%E4%B8%89%E6%96%B9API%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=720&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13557&status=error&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2&title=)
+![第三方API对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885727221-658ee407-fe22-4d0b-b9ab-b1e5b43cc680.svg#clientId=u25ce8c24-a305-4&errorMessage=unknown%20error&from=ui&id=ua1ba2659&originHeight=720&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13557&status=error&style=none&taskId=u8285ae19-d5e4-4cd5-abd2-80b928255e2&title=)
 
 **对接说明：**
 
@@ -118,7 +118,7 @@ Content-Type: application/json
 **使用说明：**
 替换设备默认的序列号，扫码后可跳转到客户自己的 APP 或小程序等其他平台，需客户自行开发扫码业务逻辑
 
-![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&errorMessage=unknown%20error&from=ui&id=u17701254&name=%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%AF%B9%E6%8E%A5%E6%B5%81%E7%A8%8B%E5%9B%BE.svg&originHeight=725&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&size=19799&status=error&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c&title=)
+![二维码对接流程图.svg](https://cdn.nlark.com/yuque/0/2021/svg/287793/1629885747063-2cc48748-a11f-404c-8539-0f9c4cffbd53.svg#clientId=u25ce8c24-a305-4&errorMessage=unknown%20error&from=ui&id=u17701254&originHeight=725&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&size=19799&status=error&style=none&taskId=u46001186-7cda-4205-bd59-b8e6ba29c1c&title=)
 
 **对接说明：**
 
