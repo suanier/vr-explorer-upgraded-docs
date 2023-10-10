@@ -1170,3 +1170,80 @@ Report printing interface, the report can be accessed when at least one of the m
 **Others: **
 
 - When synthesis is unsuccessful or measurement of the item is not performed, the access interface will return, status code: 40006
+
+## 3.9 Retrieve Report History
+
+**Interface Description：**
+
+- Retrieve Report History
+
+**Request URL：**
+
+- `http://api.explorer.visbody.com/v1/history/data`
+
+**Request Method：**
+
+- GET
+
+**Parameters：**
+
+| Parameter name | Required | Type   | Description          |
+| -------------- | -------- | ------ | -------------------- |
+| token          | YES      | string | Interface credential |
+| page           | YES      | string | Page Number          |
+| size           | YES      | string | Page Number          |
+| device_id      | YES      | string | Device ID            |
+| phone_number   | No       | string | Mobile phone No.     |
+| start_data     | No       | string | Start Time           |
+| end_data       | 否       | string | End Time             |
+
+**Example Response**
+
+```
+  {
+  "code": 0,
+  "data": {
+    "scanIdArray": [
+      "34041912080013-fe14541f-bd22-11eb-a249-300ed5517747",
+      "34041912080013-034af912-bd22-11eb-a249-300ed5517747",
+      "34041912080013-312ed677-bd1e-11eb-beeb-300ed5517747",
+      "34041912080013-cadff1c4-bd1d-11eb-beeb-300ed5517747",
+      "34041912080013-7e22e106-bd1d-11eb-beeb-300ed5517747",
+      "34041912080013-804c181e-bd0e-11eb-beeb-300ed5517747",
+      "34041912080013-338d2b02-bd0e-11eb-beeb-300ed5517747",
+      "34041912080013-cea3e9a6-bd0c-11eb-beeb-300ed5517747",
+      "34041912080013-8a634611-bd0c-11eb-beeb-300ed5517747",
+      "34041912080013-737b5c04-bd09-11eb-beeb-300ed5517747"
+    ],
+    "count": 40
+  }
+}
+```
+
+Response Parameter Description
+
+| Parameter Name
+
+| Type
+
+| Description
+
+|  |
+|  |
+
+| scanIdArray
+
+| arrat
+
+| Return User History Data
+
+|
+| count
+
+| number
+
+| Total Number of Records
+
+|
+
+\*\*
