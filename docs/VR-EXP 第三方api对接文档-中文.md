@@ -1208,7 +1208,7 @@ $headers[]  =  "language: $vfLanguage; // vfLanguage 可传语言为 en-US(英
 | ------------ | ---- | ------ | -------- |
 | token        | 是   | string | 接口凭证 |
 | page         | 是   | string | 页码     |
-| size         | 是   | string | 页码     |
+| size         | 是   | string | 每页数量 |
 | device_id    | 是   | string | 设备 ID  |
 | phone_number | 否   | string | 手机号码 |
 | start_data   | 否   | string | 开始时间 |
