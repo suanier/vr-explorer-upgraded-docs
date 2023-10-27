@@ -1,14 +1,3 @@
-## 修订记录
-
-| 日期       | 修订版本 | 修改描述                                     | 作者   |
-| ---------- | -------- | -------------------------------------------- | ------ |
-| 2021/08/18 | V 1.0.0  | 新建                                         | 范云波 |
-| 2021/08/25 | V 1.0.1  | 迁移到语雀                                   | 杨升   |
-| 2021/09/02 | V 1.0.2  | 测试自动部署                                 | 杨升   |
-| 2021/11/30 | V 1.0.3  | 修改用户信息绑定接口，生日改为年龄并增加邮箱 | 杨升   |
-| 2022/11/24 | v1.0.4   | 产品类型数据隔离区分                         | 范云波 |
-| 2023/03/14 | v1.0.5   | 体围增加 6 个围度值                          | 范云波 |
-
 ## 目录
 
 ```
@@ -984,10 +973,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
     "right_calf_girth": 0,
     "height": 0,
     "neck_girth": 0,
-    "left_mid_thigh_girth": 0,
     "left_min_thigh_girth": 0,
     "right_min_thigh_girth": 0,
-    "right_mid_thigh_girth": 0,
     "mid_waist_girth": 0
   }
 }
@@ -1005,10 +992,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | mid_waist_girth       | double | 中腰围(cm/in)       |
 | hip_girth             | double | 臀围(cm/in)         |
 | left_thigh_girth      | double | 左大腿围(cm/in)     |
-| left_mid_thigh_girth  | double | 左大腿中部围(cm/in) |
-| right_min_thigh_girth | double | 左大腿最小围(cm/in) |
+| left_min_thigh_girth  | double | 左大腿最小围(cm/in) |
 | right_thigh_girth     | double | 右大腿围(cm/in)     |
-| right_mid_thigh_girth | double | 右大腿中部围(cm/in) |
 | right_min_thigh_girth | double | 右大腿最小围(cm/in) |
 | left_calf_girth       | double | 左小腿围(cm/in)     |
 | right_calf_girth      | double | 右小腿围(cm/in)     |
