@@ -973,10 +973,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
     "right_calf_girth": 0,
     "height": 0,
     "neck_girth": 0,
-    "left_mid_thigh_girth": 0,
     "left_min_thigh_girth": 0,
     "right_min_thigh_girth": 0,
-    "right_mid_thigh_girth": 0,
     "mid_waist_girth": 0
   }
 }
@@ -994,10 +992,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | mid_waist_girth       | double | 中腰围(cm/in)       |
 | hip_girth             | double | 臀围(cm/in)         |
 | left_thigh_girth      | double | 左大腿围(cm/in)     |
-| left_mid_thigh_girth  | double | 左大腿中部围(cm/in) |
-| right_min_thigh_girth | double | 左大腿最小围(cm/in) |
+| left_min_thigh_girth  | double | 左大腿最小围(cm/in) |
 | right_thigh_girth     | double | 右大腿围(cm/in)     |
-| right_mid_thigh_girth | double | 右大腿中部围(cm/in) |
 | right_min_thigh_girth | double | 右大腿最小围(cm/in) |
 | left_calf_girth       | double | 左小腿围(cm/in)     |
 | right_calf_girth      | double | 右小腿围(cm/in)     |
@@ -1197,7 +1193,7 @@ $headers[]  =  "language: $vfLanguage; // vfLanguage 可传语言为 en-US(英
 | ------------ | ---- | ------ | -------- |
 | token        | 是   | string | 接口凭证 |
 | page         | 是   | string | 页码     |
-| size         | 是   | string | 页码     |
+| size         | 是   | string | 每页数量 |
 | device_id    | 是   | string | 设备 ID  |
 | phone_number | 否   | string | 手机号码 |
 | start_data   | 否   | string | 开始时间 |

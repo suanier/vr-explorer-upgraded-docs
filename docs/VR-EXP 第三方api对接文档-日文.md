@@ -1,10 +1,3 @@
-## 修正記録
-
-| 日付                | 修正バージョン | 修正詳細                         | 作成者 |
-| ------------------- | -------------- | -------------------------------- | ------ |
-| 2021 年 08 月 18 日 | V 1.0          | 新規作成                         | 範雲波 |
-| 2021 年 09 月 13 日 | V 1.0          | 語雀（Yuque)ワークスペースに移行 | 範雲波 |
-
 ## 目次
 
 ```
@@ -976,10 +969,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
       "right_calf_girth": 0,
       "height": 0,
       "neck_girth": 0,
-      "left_mid_thigh_girth": 0,
       "left_min_thigh_girth": 0,
       "right_min_thigh_girth": 0,
-      "right_mid_thigh_girth": 0,
       "mid_waist_girth": 0
     }
   }
@@ -997,10 +988,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | mid_waist_girth       | double | ミッドウエスト(cm/in)     |
 | hip_girth             | double | ヒップ(cm/in)             |
 | left_thigh_girth      | double | 左大腿部(cm/in)           |
-| left_mid_thigh_girth  | double | 左大腿中央部周囲(cm/in)   |
-| right_min_thigh_girth | double | 左大腿部最小外周(cm/in)   |
+| left_min_thigh_girth  | double | 左大腿部最小外周(cm/in)   |
 | right_thigh_girth     | double | 右大腿部周囲(cm/in)       |
-| right_mid_thigh_girth | double | 右大腿中央部(cm/in)       |
 | right_min_thigh_girth | double | 右大腿部最小外周(cm/in)   |
 | left_calf_girth       | double | 左足ふくらはぎ周長(cm/in) |
 | right_calf_girth      | double | 右足ふくらはぎ周囲(cm/in) |

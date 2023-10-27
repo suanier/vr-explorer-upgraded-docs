@@ -1,10 +1,3 @@
-## Revision records
-
-| Date       | Revised version | Revision description | Author    |
-| ---------- | --------------- | -------------------- | --------- |
-| 2021/08/18 | V 1.0           | New creation         | Fan Yunbo |
-| 2021/09/13 | V 1.0           | Migrate to Yuque     | Fan Yunbo |
-
 **Contents**
 
 ```
@@ -972,10 +965,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
       "right_calf_girth": 0,
       "height": 0,
       "neck_girth": 0,
-      "left_mid_thigh_girth": 0,
       "left_min_thigh_girth": 0,
       "right_min_thigh_girth": 0,
-      "right_mid_thigh_girth": 0,
       "mid_waist_girth": 0
     }
   }
@@ -993,10 +984,8 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | mid_waist_girth       | double | Mid Waist(cm/in)                            |
 | hip_girth             | double | Hipline(cm/in)                              |
 | left_thigh_girth      | double | Left thigh(cm/in)                           |
-| left_mid_thigh_girth  | double | Left thigh middle(cm/in)                    |
-| right_min_thigh_girth | double | Minimum circumference of left thigh(cm/in)  |
+| left_min_thigh_girth  | double | Minimum circumference of left thigh(cm/in)  |
 | right_thigh_girth     | double | Right thigh circumference(cm/in)            |
-| right_mid_thigh_girth | double | Right thigh circumference(cm/in)            |
 | right_min_thigh_girth | double | Minimum circumference of right thigh(cm/in) |
 | left_calf_girth       | double | Left calf circumference(cm/in)              |
 | right_calf_girth      | double | Right calf circumference(cm/in)             |
