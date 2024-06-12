@@ -14,7 +14,7 @@
 		3.2.2 用户信息绑定
 	3.3 获取体测文件及数据
 		3.3.1 获取体成分数据
-      3.3.1-1 vr-explorer 获取体成分数据
+      	3.3.1-1 vr-explorer 获取体成分数据
     	3.3.1-2 S30 获取体成分数据
 		3.3.2 获取用户脂肪等级
 		3.3.3 获取身体评分
@@ -24,7 +24,6 @@
 		3.4.2 获取体态数据
 		3.4.3 获取围度文件
 		3.4.4 获取围度数据
-	3.5 获取肩部检测数据
 	3.6 获取打印报告
 	3.7 维塑返回状态码说明
 	3.8 合成推送类型与接口关系说明
@@ -250,7 +249,6 @@ Content-Type: application/json
 | girth_status         | 否   | int    | 体围的合成状态，０失败，１成功，２超时   |
 | eval_status          | 否   | int    | 体态的合成状态，０失败，１成功，２超时   |
 | bia_status           | 否   | int    | 体成分的合成状态，０失败，１成功，２超时 |
-| eval_shoulder_status | 否   | int    | 肩部的合成状态，０失败，１成功，２超时   |
 | pdf_status           | 否   | int    | pdf 是否可以打印，０否，１是             |
 | token                | 是   | string | 第三方接口凭证                           |
 
@@ -269,7 +267,6 @@ Content-Type: application/json
     "eval_status": 0,
     "bia_status": 0,
     "girth_status": 0,
-    "eval_shoulder_status": 0
   },
   "device_id": "20041910080001",
   "scan_id": "20041910080001-a210136e-1bfb-11ea-b711-00d861a9ecd9",
@@ -999,85 +996,6 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | right_calf_girth      | double | 右小腿围(cm/in)     |
 | height                | double | 输入身高(cm/in)     |
 
-## 3.5 获取肩部检测数据及结论
-
-**接口描述：**
-
-- 用于获取肩部检测数据及结论
-
-**请求 URL：**
-
-- `http://api.explorer.visbody.com/v1/shoulder/data`
-
-**请求方式：**
-
-- GET
-
-**参数：**
-
-| 参数名  | 必选 | 类型   | 说明     |
-| ------- | ---- | ------ | -------- |
-| token   | 是   | string | 接口凭证 |
-| scan_id | 是   | string | 扫描 ID  |
-
-**返回示例**
-
-```json
-{
-  "code": 0,
-  "data": {
-    "left_abuction": {
-      "val": 25.5,
-      "conclusion": "受限",
-      "limit": "[150.0°~180.0°]"
-    },
-    "right_abuction": {
-      "val": 25.5,
-      "conclusion": "受限",
-      "limit": "[150.0°~180.0°]"
-    },
-    "left_antexion": {
-      "val": 45.5,
-      "conclusion": "过大",
-      "limit": "[120.0°~180.0°]"
-    },
-    "right_antexion": {
-      "val": "--",
-      "conclusion": "--",
-      "limit": "--"
-    },
-    "conclusions": [
-      {
-        "title": "肩关节活动度受限",
-        "analysis": "肩关节活动受限，多由肌肉紧张，锁骨肩胛骨活动度不足，头颈肩胛不在中立位等原因引起。会影响正常运动模式（导致运动损伤），以及引起相关病理问题（如肩周炎、含胸驼背、颈椎酸痛等现象），长期忽视易导致各类肩关节疾病的发生。",
-        "advice": "找专业人士对具体原因做进一步筛查及治疗。"
-      },
-      {
-        "title": "肩关节活动度过大",
-        "analysis": "肩关节活动度过大，多由韧带松弛导致（女性多见），如经常肩部柔韧性训练，也会出现活动过大的现象。",
-        "advice": "找专业人士对具体原因做进一步筛查及治疗。"
-      }
-    ]
-  }
-}
-```
-
-**返回参数说明**
-
-| 参数名         | 类型   | 说明                                                        |
-| -------------- | ------ | ----------------------------------------------------------- |
-| left_abuction  | object | 外展上举-左手                                               |
-| right_abuction | object | 外展上举-右手                                               |
-| left_antexion  | object | 前屈上举-左手                                               |
-| right_antexion | object | 前屈上举-右手                                               |
-| val            | double | 测量值 单位（°） 若本项失败则为 --                          |
-| limit          | string | 正常范围 若本项失败则为 --                                  |
-| conclusion     | string | 评估结论 若本项失败则为 --                                  |
-| conclusions    | array  | 本次检测的所有结论 根据检测情况会出现单个结论或多个结论情况 |
-| title          | string | 结论标题                                                    |
-| analysis       | string | 结论分析 若所有项均正常则返回空字符串                       |
-| advice         | string | 结论建议 若所有项均正常则返回空字符串                       |
-
 ## 3.6 获取打印报告
 
 **接口描述：**
@@ -1151,7 +1069,6 @@ $headers[]  =  "language: $vfLanguage; // vfLanguage 可传语言为 en-US(英
 | 体围         | girth_status         |
 | 体态         | eval_status          |
 | 体成分       | bia_status           |
-| 肩部         | eval_shoulder_status |
 | 打印报告     | pdf_status           |
 
 **合成推送类型与接口关系如下：**
@@ -1161,7 +1078,6 @@ $headers[]  =  "language: $vfLanguage; // vfLanguage 可传语言为 en-US(英
 | girth_status         | 体围     | 3.4.3、3.4.4               |
 | eval_status          | 体态     | 3.3.3、3.4.1、3.4.2        |
 | bia_status           | 体成分   | 3.3.1、3.3.2、3.3.3、3.3.4 |
-| eval_shoulder_status | 肩部检测 | 3.5                        |
 | pdf_status           | 打印报告 | 3.6                        |
 
 ** 3.8.1 接口特别说明：**
