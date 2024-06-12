@@ -24,7 +24,6 @@
 		3.4.2 Acquisition of posture data
 		3.4.3 Acquisition of circumference file
 		3.4.4 Acquisition of circumference data
-	3.5 Acquisition of shoulder test data
 	3.6 Acquisition of report printing
 	3.7 Description of Visbody return status code
 	3.8 Description of relationship between the synthesis push type and interface
@@ -241,7 +240,6 @@ After scanning the QR code of the device, call the interface to push the anthrop
 | girth_status         | No       | int    | Circumference synthesis state, 0 for failure, 1 for success, 2 for timeout    |
 | eval_status          | No       | int    | Posture synthesis state, 0 for failure, 1 for success, 2 for timeout          |
 | bia_status           | No       | int    | Body composition synthesis state, 0 for failure, 1 for success, 2 for timeout |
-| eval_shoulder_status | No       | int    | Shoulder synthesis state, 0 for failure, 1 for success, 2 for timeout         |
 | pdf_status           | No       | int    | Whether the pdf can be printed, 0 for no, 1 for yes                           |
 | token                | Yes      | string | Third-party interface credential                                              |
 
@@ -260,7 +258,6 @@ After scanning the QR code of the device, call the interface to push the anthrop
     "eval_status": 0,
     "bia_status": 0,
     "girth_status": 0,
-    "eval_shoulder_status": 0
   },
   "device_id": "35041910080001",
   "scan_id": "35041910080001-a210136e-1bfb-11ea-b711-00d861a9ecd9",
@@ -991,86 +988,6 @@ $headers[]  =  "Authorization: Bearer ". $vfToken;
 | right_calf_girth      | double | Right calf circumference(cm/in)             |
 | height                | double | Enter height(cm/in)                         |
 
-## 3.5 Obtain the shoulder test data and conclusion
-
-**Interface description:**
-
-- Obtain the shoulder test data and conclusion
-
-**Request URL:**
-
-- [http://api.explorer.visbody.com/v1/shoulder/data](http://api.vr-explorer.visbody.com/v1/shoulder/data)
-
-**Request method:**
-
-- GET
-
-**Parameter:**
-
-| Parameter name | Required | Type   | Description          |
-| -------------- | -------- | ------ | -------------------- |
-| token          | Yes      | string | Interface credential |
-| scan_id        | Yes      | string | Scan ID              |
-
-**Return example**
-
-```
-  {
-    "code": 0,
-    "data": {
-		"left_abuction": {
-			"val": 25.5,
-			"conclusion": "Limited",
-			"limit": "[150.0 ~180.0 ]"
-		},
-		"right_abuction": {
-			"val": 25.5,
-			"conclusion":"Limited",
-			"limit": "[150.0 ~180.0 ]"
-		},
-		"left_antexion": {
-			"val": 45.5,
-			"conclusion":"Excessive",
-			"limit": "[120.0 ~180.0 ]"
-		},
-		"right_antexion": {
-			"val": "--",
-			"conclusion": "--",
-			"limit": "--"
-		},
-		"conclusions": [
-			{
-				"title":"Limited motion of the shoulder joint",
-				"analysis":"The limited motion of the shoulder joint is mostly caused by muscular tension, insufficient range of motion of clavicle and scapula, and neck scapula not in the neutral position. It will interfere with normal motion mode (causing athletic injury), causes related pathological problems (such as scapulohumeral periarthritis, hunchback, cervical spine pain), and may lead to various shoulder joint diseases if it is neglected for a long period. ",
-				"advice":"Please invite professionals to further seek for concrete reasons. "
-			},
-			{
-				"title":"Excessive motion of the shoulder joint",
-				"analysis":"The excessive motion of the shoulder joint is mostly caused by the slack ligament (mostly seen in females). For example, the frequent shoulder flexibility training may also lead to excessive activity. ",
-				"advice": "Please invite professionals to further seek for concrete reasons. "
-			}
-		]
-
-    }
-  }
-```
-
-**Return parameter description**
-
-| Parameter name | Type   | Description                                                                                                         |
-| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| left_abuction  | object | Abduction and upthrow - left hand                                                                                   |
-| right_abuction | object | Abduction and upthrow - right hand                                                                                  |
-| left_antexion  | object | Anteflexion and upthrow - left hand                                                                                 |
-| right_antexion | object | Anteflexion and upthrow - right hand                                                                                |
-| val            | double | Measured value, unit: ( ), -- for failure                                                                           |
-| limit          | string | Normal range, -- for failure                                                                                        |
-| conclusion     | string | Evaluation conclusions, -- for failure                                                                              |
-| conclusions    | array  | All conclusions of this test, there may be a single conclusion or multiple conclusions based on the test condition. |
-| title          | string | Conclusion title                                                                                                    |
-| analysis       | string | Conclusion analysis. If all items are normal, return the null character string                                      |
-| advice         | string | Conclusion suggestion. If all items are normal, return the null character string                                    |
-
 ## 3.6 Acquisition of report printing
 
 **Interface description:**
@@ -1140,7 +1057,6 @@ The interface response of Visbody is distinguished by HTTP status code and busin
 | Body circumference | girth_status         |
 | Posture            | eval_status          |
 | Body composition   | bia_status           |
-| Shoulder           | eval_shoulder_status |
 | Report printing    | pdf_status           |
 
 **Relationship between the synthesis push type and interface is as follows:**
@@ -1150,7 +1066,6 @@ The interface response of Visbody is distinguished by HTTP status code and busin
 | girth_status         | Body circumference | 3.4.3,3.4.4             |
 | eval_status          | Posture            | 3.3.3,3.4.1,3.4.2       |
 | bia_status           | Body composition   | 3.3.1,3.3.2,3.3.3,3.3.4 |
-| eval_shoulder_status | Shoulder test      | 3.5                     |
 | pdf_status           | Report printing    | 3.6                     |
 
 ### 3.8.1 Special instructions of interface:
